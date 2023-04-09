@@ -28,6 +28,7 @@
   img{
     height: 3em;
   }
+
   h1 {
     text-align: center;
     font-size: 3em;
