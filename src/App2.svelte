@@ -27,7 +27,7 @@
   
   h1 {
     text-align: center;
-    font-size: 1em;
+    font-size: 3em;
     margin-bottom: 14px;
     font-family: 'Nunito Sans';
   }
