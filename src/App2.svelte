@@ -1,7 +1,7 @@
 <!-- App.svelte -->
 <script>
   import { onMount } from 'svelte';
-  import { fade } from 'svelte/transition';
+  import { scale } from 'svelte/transition';
   let pools = [];
   
   async function fetchData() {
@@ -18,13 +18,6 @@
 </script>
 
 <style>
-  body {
-    margin: 0;
-    padding: 14px;
-    background-color: #f5f5f5;
-    font-family: 'Nunito Sans';
-  }
-  
   img{
     height: 3em;
   }
