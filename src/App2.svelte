@@ -18,7 +18,6 @@
 
 <style>
   body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 14px;
     background-color: #f5f5f5;
