@@ -50,14 +50,14 @@
   }
   
   th {
-    background-color: #333333;
+    background-color: #f0b90b;
     color: white;
     font-weight: bold;
     font-family: 'Nunito Sans';
   }
 
   a {
-    color: #999900;
+    color: #f0b90b;
     text-decoration: none;
     font-family: 'Nunito Sans';
   }
