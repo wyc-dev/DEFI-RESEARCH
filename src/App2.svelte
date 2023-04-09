@@ -57,7 +57,7 @@
   }
 
   a {
-    color: #333333;
+    color: #999900;
     text-decoration: none;
     font-family: 'Nunito Sans';
   }
