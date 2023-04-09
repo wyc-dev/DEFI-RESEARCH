@@ -1,6 +1,7 @@
 <!-- App.svelte -->
 <script>
   import { onMount } from 'svelte';
+  import { fade } from 'svelte/transition';
   let pools = [];
   
   async function fetchData() {
@@ -82,10 +83,10 @@
     }
   }
 </style>
-<img src="https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=024" alt="BNB Logo" class="bnb-logo" />
+<img in:scale src="https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=024" alt="BNB Logo" class="bnb-logo" />
 <h1>BNB DEFI VALUE</h1>
 <table>
-  <thead>
+  <thead in:scale>
     <tr>
       <th>POOL LP</th>
       <th>SWAPPING POOL ADDRESS</th>
@@ -93,7 +94,7 @@
       <th>TOKEN VALUE（USD）</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody in:scale>
     {#each pools as pool}
       {#if pool.attributes.name.split(' / ')[1] === 'WBNB'}
         <tr>
