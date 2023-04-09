@@ -24,6 +24,9 @@
     font-family: 'Nunito Sans';
   }
   
+  img{
+    height: 3em;
+  }
   h1 {
     text-align: center;
     font-size: 3em;
@@ -74,12 +77,12 @@
     }
 
     th, td {
-      padding: 10px;
+      padding: 9px;
       font-size: 0.9em;
     }
   }
 </style>
-
+<img src="https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=024" alt="BNB Logo" class="bnb-logo" />
 <h1>BNB DEFI VALUE</h1>
 <table>
   <thead>
