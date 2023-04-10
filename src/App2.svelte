@@ -2,20 +2,34 @@
 <script>
   import { onMount } from 'svelte';
   import { scale } from 'svelte/transition';
-  let pools = [];
+  let wbnb_pools = [];
+  let weth_pools = [];
   
-  async function fetchData() {
-    const response = await fetch('https://api.geckoterminal.com/api/v2/networks/bsc/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/pools');
-    const data = await response.json();
-    pools = data.data.filter(pool => pool.attributes.name.includes('WBNB'));
+async function fetchData() {
+  const bnb_response = await fetch('https://api.geckoterminal.com/api/v2/networks/bsc/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/pools');
+  const eth_response = await fetch('https://api.geckoterminal.com/api/v2/networks/eth/tokens/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/pools');
+
+  const bnb_data = await bnb_response.json();
+  const wbnb_pools = bnb_data.data.filter(pool => pool.attributes.name.includes('WBNB'));
+
+  const eth_data = await eth_response.json();
+  const weth_pools = eth_data.data.filter(pool => pool.attributes.name.includes('WETH'));
+
   }
   
   onMount(() => {
     fetchData();
     setInterval(fetchData, 100000);
   });
-  
+
+  let eth = false;
+  let bnb = false;
+  let arb = false;
+
 </script>
+
+
+
 
 <style>
   img{
@@ -56,7 +70,9 @@
     text-decoration: none;
     font-family: 'Nunito Sans';
   }
-
+  .eth{
+    background-color: #8c8c8c;
+  }
   a:hover {
     text-decoration: underline;
   }
@@ -77,8 +93,13 @@
     }
   }
 </style>
+
+
+<div on:click={()=>{eth=false;bnb=true;}}>
 <img in:scale src="https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=024" alt="BNB Logo" class="bnb-logo" />
 <h1>$BNB DEFI VALUE</h1>
+</div>
+
 <table>
   <thead in:scale>
     <tr>
@@ -89,7 +110,7 @@
     </tr>
   </thead>
   <tbody in:scale>
-    {#each pools as pool}
+    {#each wbnb_pools as pool}
       {#if pool.attributes.name.split(' / ')[1] === 'WBNB'}
         <tr>
           <td>{pool.attributes.name.split('/')[1]}/{pool.attributes.name.split('/')[0]}</td>
@@ -108,3 +129,41 @@
     {/each}
   </tbody>
 </table>
+
+<br>
+<div on:click={()=>{eth=true;bnb=false;}}>
+<img in:scale src="https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" alt="ETH Logo" class="bnb-logo" />
+<h1>$ETH DEFI VALUE</h1>
+</div>
+
+<table>
+  <thead in:scale>
+    <tr>
+      <th class="eth">POOL LP</th>
+      <th class="eth">SWAPPING POOL ADDRESS</th>
+      <th class="eth">WETH VALUE（USD）</th>
+      <th class="eth">TOKEN VALUE（USD）</th>
+    </tr>
+  </thead>
+  <tbody in:scale>
+    {#each weth_pools as pool}
+      {#if pool.attributes.name.split(' / ')[1] === 'WETH'}
+        <tr>
+          <td>{pool.attributes.name.split('/')[1]}/{pool.attributes.name.split('/')[0]}</td>
+          <td><a href="https://etherscan.io/address/{pool.attributes.address}" target="_blank">Etherscan</a></td>
+          <td>{pool.attributes.quote_token_price_usd}</td>
+          <td>{pool.attributes.base_token_price_usd}</td>
+        </tr>
+      {:else if pool.attributes.name.split(' / ')[0] === 'WETH'}
+        <tr>
+          <td>{pool.attributes.name.split('/')[0]}/{pool.attributes.name.split('/')[1]}</td>
+          <td><a href="https://etherscan.io/address/{pool.attributes.address}" target="_blank">Etherscan</a></td>
+          <td>{pool.attributes.base_token_price_usd}</td>
+          <td>{pool.attributes.quote_token_price_usd}</td>
+        </tr>
+      {/if}
+    {/each}
+  </tbody>
+</table>
+
+
