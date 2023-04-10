@@ -25,7 +25,7 @@
 </script>
 
 <style>
-  img{
+  img {
     height: 4em;
   }
 
@@ -70,6 +70,10 @@
     text-decoration: underline;
   }
 
+  .table-container {
+    overflow-x: auto;
+  }
+
   @media (max-width: 767px) {
     body {
       padding: 9px;
@@ -87,11 +91,12 @@
   }
 </style>
 
+
 <!-- <img in:scale src="https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" alt="ETH Logo" class="bnb-logo" />
 <h1>$ETH DEFI VALUE</h1> -->
 <img in:scale src="https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=024" alt="BNB Logo" class="bnb-logo" />
 <h1>$BNB DEFI VALUE</h1>
-
+<div class="table-container">
 <table>
   <thead in:scale>
     <tr>
@@ -121,3 +126,4 @@
     {/each}
   </tbody>
 </table>
+</div>
