@@ -12,7 +12,7 @@
   
   onMount(() => {
     fetchData();
-    setInterval(fetchData, 60000);
+    setInterval(fetchData, 100000);
   });
   
 </script>
