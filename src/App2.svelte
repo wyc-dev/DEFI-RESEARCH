@@ -26,12 +26,12 @@
 
 <style>
   img{
-    height: 3em;
+    height: 4em;
   }
 
   h1 {
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 14px;
     font-family: 'Nunito Sans';
   }
