@@ -94,15 +94,15 @@
         <tr>
           <td>{pool.attributes.name.split('/')[1]}/{pool.attributes.name.split('/')[0]}</td>
           <td><a href="https://bscscan.com/address/{pool.attributes.address}" target="_blank">BSCscan</a></td>
-          <td>{pool.attributes.quote_token_price_usd.toFixed(4)}</td>
-          <td>{pool.attributes.base_token_price_usd.toFixed(4)}</td>
+          <td>{pool.attributes.quote_token_price_usd}</td>
+          <td>{pool.attributes.base_token_price_usd}</td>
         </tr>
       {:else if pool.attributes.name.split(' / ')[0] === 'WBNB'}
         <tr>
           <td>{pool.attributes.name.split('/')[0]}/{pool.attributes.name.split('/')[1]}</td>
           <td><a href="https://bscscan.com/address/{pool.attributes.address}" target="_blank">BSCscan</a></td>
-          <td>{pool.attributes.base_token_price_usd.toFixed(4)}</td>
-          <td>{pool.attributes.quote_token_price_usd.toFixed(4)}</td>
+          <td>{pool.attributes.base_token_price_usd}</td>
+          <td>{pool.attributes.quote_token_price_usd}</td>
         </tr>
       {/if}
     {/each}
