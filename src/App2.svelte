@@ -34,6 +34,7 @@
     font-size: 2.5em;
     margin-bottom: 14px;
     font-family: 'Nunito Sans';
+    color: #8c8c8c;
   }
 
   table {
@@ -49,6 +50,7 @@
     border: 1px solid #ccc;
     text-align: center;
     font-family: 'Nunito Sans';
+    color: #8c8c8c;
   }
   
   th {
