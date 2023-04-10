@@ -8,12 +8,8 @@
 async function fetchData() {
   const bnb_response = await fetch('https://api.geckoterminal.com/api/v2/networks/bsc/tokens/0xbb4CdB9CBd36B01bD1cBaEBF2De08d9173bc095c/pools');
   const eth_response = await fetch('https://api.geckoterminal.com/api/v2/networks/eth/tokens/0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2/pools');
-
   const bnb_data = await bnb_response.json();
-  const wbnb_pools = bnb_data.data.filter(pool => pool.attributes.name.includes('WBNB'));
-
   const eth_data = await eth_response.json();
-  const weth_pools = eth_data.data.filter(pool => pool.attributes.name.includes('WETH'));
 
   }
   
