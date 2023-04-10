@@ -19,12 +19,12 @@
 
 <style>
   img{
-    height: 3em;
+    height: 4em;
   }
 
   h1 {
     text-align: center;
-    font-size: 3em;
+    font-size: 2.5em;
     margin-bottom: 14px;
     font-family: 'Nunito Sans';
   }
@@ -78,7 +78,7 @@
   }
 </style>
 <img in:scale src="https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=024" alt="BNB Logo" class="bnb-logo" />
-<h1>BNB DEFI VALUE</h1>
+<h1>WBNB DEFI VALUE</h1>
 <table>
   <thead in:scale>
     <tr>
