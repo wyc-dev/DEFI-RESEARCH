@@ -90,7 +90,7 @@
 <!-- <img in:scale src="https://cryptologos.cc/logos/ethereum-eth-logo.svg?v=024" alt="ETH Logo" class="bnb-logo" />
 <h1>$ETH DEFI VALUE</h1> -->
 <img in:scale src="https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=024" alt="BNB Logo" class="bnb-logo" />
-<h1>BNB DEFI VALUE</h1>
+<h1>$BNB DEFI VALUE</h1>
 
 <table>
   <thead in:scale>
