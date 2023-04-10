@@ -78,7 +78,7 @@
   }
 </style>
 <img in:scale src="https://cryptologos.cc/logos/bnb-bnb-logo.svg?v=024" alt="BNB Logo" class="bnb-logo" />
-<h1>WBNB DEFI VALUE</h1>
+<h1>BNB DEFI VALUE</h1>
 <table>
   <thead in:scale>
     <tr>
