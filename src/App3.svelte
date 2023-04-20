@@ -35,17 +35,17 @@
       <tr>
         <th>Market</th>
         <th>Status</th>
-        <th>Base Asset</th>
-        <th>Quote Asset</th>
+        <!-- <th>Base Asset</th>
+        <th>Quote Asset</th> -->
         <th>Step Size</th>
         <th>Tick Size</th>
         <th>Index Price</th>
         <th>Oracle Price</th>
         <th>Price Change 24H</th>
         <th>Next Funding Rate</th>
-        <th>Next Funding At</th>
+        <!-- <th>Next Funding At</th> -->
         <th>Min Order Size</th>
-        <th>Type</th>
+        <!-- <th>Type</th> -->
         <th>Initial Margin Fraction</th>
         <th>Maintenance Margin Fraction</th>
         <th>Transfer Margin Fraction</th>
@@ -57,7 +57,7 @@
         <th>Max Position Size</th>
         <th>Baseline Position Size</th>
         <th>Asset Resolution</th>
-        <th>Synthetic Asset Id</th>
+        <!-- <th>Synthetic Asset Id</th> -->
       </tr>
     </thead>
     <tbody>
@@ -65,17 +65,17 @@
         <tr>
           <td>{markets[market].market}</td>
           <td>{markets[market].status}</td>
-          <td>{markets[market].baseAsset}</td>
-          <td>{markets[market].quoteAsset}</td>
+          <!-- <td>{markets[market].baseAsset}</td>
+          <td>{markets[market].quoteAsset}</td> -->
           <td>{markets[market].stepSize}</td>
           <td>{markets[market].tickSize}</td>
           <td id={`price-${market}`}>{markets[market].indexPrice}</td>
           <td>{markets[market].oraclePrice}</td>
           <td>{markets[market].priceChange24H}</td>
           <td>{markets[market].nextFundingRate}</td>
-          <td>{markets[market].nextFundingAt}</td>
+          <!-- <td>{markets[market].nextFundingAt}</td> -->
           <td>{markets[market].minOrderSize}</td>
-          <td>{markets[market].type}</td>
+          <!-- <td>{markets[market].type}</td> -->
           <td>{markets[market].initialMarginFraction}</td>
           <td>{markets[market].maintenanceMarginFraction}</td>
           <td>{markets[market].transferMarginFraction}</td>
@@ -87,9 +87,15 @@
           <td>{markets[market].maxPositionSize}</td>
           <td>{markets[market].baselinePositionSize}</td>
           <td>{markets[market].assetResolution}</td>
-          <td>{markets[market].syntheticAssetId}</td>
+          <!-- <td>{markets[market].syntheticAssetId}</td> -->
         </tr>
       {/each}
     </tbody>
   </table>
 {/if}
+
+<style>
+table{
+  width:100%;
+}
+</style>
