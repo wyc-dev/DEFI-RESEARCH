@@ -11,17 +11,30 @@
     Object.keys(markets).forEach(market => {
       const oldPrice = oldMarkets[market]?.indexPrice;
       const newPrice = markets[market].indexPrice;
-      const cell = document.getElementById(`price-${market}`);
+      const index_cell = document.getElementById(`price-${market}`);
 
-      if (cell && newPrice !== oldPrice) {
-        cell.style.backgroundColor = newPrice > oldPrice ? "lightgreen" : "tomato";
+      const oldOracle = oldMarkets[market]?.oraclePrice;
+      const newOracle = markets[market].oraclePrice;
+      const oracle_cell = document.getElementById(`oracle-${market}`);
 
+      if (index_cell && newPrice !== oldPrice) {
+        index_cell.style.backgroundColor = newPrice > oldPrice ? "lightgreen" : "tomato";
         // Fade out the background color after 0.5 second
         setTimeout(() => {
-          cell.style.transition = "background-color 1s";
-          cell.style.backgroundColor = "";
+          index_cell.style.transition = "background-color 1s";
+          index_cell.style.backgroundColor = "";
         }, 500);
       }
+
+
+      if (oracle_cell && newOracle !== oldOracle) {
+        oracle_cell.style.backgroundColor = newOracle > oldOracle ? "lightgreen" : "tomato";
+        setTimeout(() => {
+          oracle_cell.style.transition = "background-color 1s";
+          oracle_cell.style.backgroundColor = "";
+        }, 500);
+      }
+
     });
   }
 
@@ -70,7 +83,7 @@
           <td>{markets[market].stepSize}</td>
           <td>{markets[market].tickSize}</td>
           <td id={`price-${market}`}>{markets[market].indexPrice}</td>
-          <td>{markets[market].oraclePrice}</td>
+          <td id={`oracle-${market}`}>{markets[market].oraclePrice}</td>
           <td>{markets[market].priceChange24H}</td>
           <td>{markets[market].nextFundingRate}</td>
           <!-- <td>{markets[market].nextFundingAt}</td> -->
