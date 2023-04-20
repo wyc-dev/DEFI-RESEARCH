@@ -7,8 +7,12 @@
     markets = data.markets;
   }
 
+
+
   setInterval(updateData, 500);
+
   
+
 </script>
 
 {#if Object.keys(markets).length > 0}
