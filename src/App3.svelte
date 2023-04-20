@@ -4,20 +4,34 @@
   async function updateData() {
     const response = await fetch("https://api.dydx.exchange/v3/markets");
     const data = await response.json();
+    const oldMarkets = markets;
     markets = data.markets;
+
+    // Loop through each market and update the background color of the cell
+    Object.keys(markets).forEach(market => {
+      const oldPrice = oldMarkets[market]?.indexPrice;
+      const newPrice = markets[market].indexPrice;
+      const cell = document.getElementById(`price-${market}`);
+
+      if (cell && newPrice !== oldPrice) {
+        cell.style.backgroundColor = newPrice > oldPrice ? "lightgreen" : "tomato";
+
+        // Fade out the background color after 0.5 second
+        setTimeout(() => {
+          cell.style.transition = "background-color 1s";
+          cell.style.backgroundColor = "";
+        }, 500);
+      }
+    });
   }
 
-
-
   setInterval(updateData, 500);
-
-  
 
 </script>
 
 {#if Object.keys(markets).length > 0}
   <table>
-    <thead>
+      <thead>
       <tr>
         <th>Market</th>
         <th>Status</th>
@@ -55,7 +69,7 @@
           <td>{markets[market].quoteAsset}</td>
           <td>{markets[market].stepSize}</td>
           <td>{markets[market].tickSize}</td>
-          <td>{markets[market].indexPrice}</td>
+          <td id={`price-${market}`}>{markets[market].indexPrice}</td>
           <td>{markets[market].oraclePrice}</td>
           <td>{markets[market].priceChange24H}</td>
           <td>{markets[market].nextFundingRate}</td>
