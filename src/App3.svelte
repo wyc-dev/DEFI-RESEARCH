@@ -1,5 +1,6 @@
 <script>
-  let markets = {};
+
+let markets = {};
 
   async function updateData() {
     const response = await fetch("https://api.dydx.exchange/v3/markets");
