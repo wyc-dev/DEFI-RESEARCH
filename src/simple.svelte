@@ -94,18 +94,14 @@ td{
 }
 table {
   width: 100%;
-  max-width: 800px;
   margin: auto;
-  font-size: 16px;
+  font-size: 0.8em;
   border-collapse: collapse;
 }
 
 @media (max-width: 600px) {
   table {
-    font-size: 13px;
-  }
-    td{
-    font-size:11px;
+    font-size: 0.68em;
   }
 }
 
