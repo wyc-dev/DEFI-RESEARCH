@@ -72,7 +72,7 @@ let markets = {};
         <th>Maintenance Margin Fraction</th>
         <th>Transfer Margin Fraction</th> -->
         <th>Volume 24H</th>
-        <th>Trades 24H</th>
+        <!-- <th>Trades 24H</th> -->
         <th>Open Interest</th>
         <!-- <th>Incremental Initial Margin Fraction</th>
         <th>Incremental Position Size</th>
@@ -102,7 +102,7 @@ let markets = {};
           <td>{markets[market].maintenanceMarginFraction}</td>
           <td>{markets[market].transferMarginFraction}</td> -->
           <td>{markets[market].volume24H}</td>
-          <td>{markets[market].trades24H}</td>
+          <!-- <td>{markets[market].trades24H}</td> -->
           <td>{markets[market].openInterest}</td>
           <!-- <td>{markets[market].incrementalInitialMarginFraction}</td>
           <td>{markets[market].incrementalPositionSize}</td>
