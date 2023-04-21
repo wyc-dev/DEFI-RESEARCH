@@ -89,9 +89,6 @@ main{
 thead{
   color : #5E1CEC;
 }
-td{
-  font-size:14px;
-}
 table {
   width: 100%;
   margin: auto;
