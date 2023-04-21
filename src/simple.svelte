@@ -1,5 +1,6 @@
 <script>
-  import Logo from './Logo.svelte';
+import { fade } from 'svelte/transition';
+import Logo from './Logo.svelte';
 
 
 let markets = {};
@@ -48,12 +49,12 @@ let markets = {};
   setInterval(updateData, 500);
 
 </script>
-<main>
+<main in:fade>
 <Logo/>
 
 {#if Object.keys(markets).length > 0}
   <table>
-      <thead>
+      <thead in:fade>
       <tr>
         <th>Market</th>
         <th>Index Price</th>
@@ -63,7 +64,7 @@ let markets = {};
         <th>Open Interest</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody in:fade>
       {#each Object.keys(markets) as market}
         <tr>
           <td id={`signal-${market}`}>{markets[market].market}</td>
