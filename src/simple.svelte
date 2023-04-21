@@ -92,5 +92,21 @@ thead{
 td{
   font-size:14px;
 }
+table {
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+  font-size: 16px;
+  border-collapse: collapse;
+}
+
+@media (max-width: 600px) {
+  table {
+    font-size: 13px;
+  }
+    td{
+    font-size:11px;
+  }
+}
 
 </style>
