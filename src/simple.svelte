@@ -80,14 +80,16 @@ let markets = {};
 </main>
 
 <style>
+
 main{
   width: 100%;
+  font-family: 'Nunito Sans';
 }
 thead{
   color : #5E1CEC;
 }
-table{
-  font-family: 'Nunito Sans';
+td{
+  font-size:14px;
 }
 
 </style>
