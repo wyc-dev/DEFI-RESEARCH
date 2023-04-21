@@ -48,7 +48,7 @@ let markets = {};
   setInterval(updateData, 500);
 
 </script>
-
+<main>
 <Logo/>
 
 {#if Object.keys(markets).length > 0}
@@ -77,14 +77,16 @@ let markets = {};
     </tbody>
   </table>
 {/if}
+</main>
 
 <style>
-
+main{
+  width: 100%;
+}
 thead{
   color : #5E1CEC;
 }
 table{
-  width:100%;
   font-family: 'Nunito Sans';
 }
 
