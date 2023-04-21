@@ -17,6 +17,8 @@
       const newOracle = markets[market].oraclePrice;
       const oracle_cell = document.getElementById(`oracle-${market}`);
 
+      const signal_cell = document.getElementById(`signal-${market}`);
+
       if (index_cell && newPrice !== oldPrice) {
         index_cell.style.backgroundColor = newPrice > oldPrice ? "lightgreen" : "tomato";
         // Fade out the background color after 0.5 second
@@ -34,6 +36,8 @@
           oracle_cell.style.backgroundColor = "";
         }, 500);
       }
+
+      signal_cell.style.backgroundColor = newOracle < newPrice ? "green" : "red";
 
     });
   }
@@ -76,7 +80,7 @@
     <tbody>
       {#each Object.keys(markets) as market}
         <tr>
-          <td>{markets[market].market}</td>
+          <td id={`signal-${market}`}>{markets[market].market}</td>
           <td>{markets[market].status}</td>
           <!-- <td>{markets[market].baseAsset}</td>
           <td>{markets[market].quoteAsset}</td> -->
