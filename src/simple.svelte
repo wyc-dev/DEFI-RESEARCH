@@ -26,6 +26,7 @@ let markets = {};
       if (index_cell && newPrice !== oldPrice) {
         index_cell.style.backgroundColor = newPrice > oldPrice ? "lightgreen" : "tomato";
         // Fade out the background color after 0.5 second
+
         setTimeout(() => {
           index_cell.style.transition = "background-color 1s";
           index_cell.style.backgroundColor = "";
