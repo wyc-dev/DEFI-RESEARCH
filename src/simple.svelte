@@ -5,7 +5,23 @@ import Logo from './Logo.svelte';
 
 let markets = {};
 
-async function getOrderbook(symbol) {
+async function getDydxOrderbook(symbol) {
+  const response = await fetch(`https://api.dydx.exchange/v3/orderbook/${symbol}`);
+  const data = await response.json();
+
+  if (data && data.asks && data.asks.length > 0 && data.bids && data.bids.length > 0) {
+    const bestAsk = data.asks[0];
+    const bestBid = data.bids[0];
+
+    return {
+      a: [bestAsk.price, bestAsk.size],
+      b: [bestBid.price, bestBid.size]
+    };
+  } else {
+    return null;
+  }
+}
+async function getBybitOrderbook(symbol) {
   const baseUrl = "https://api.bybit.com/v5/market/orderbook";
   const params = new URLSearchParams({
     category: "linear",
@@ -40,14 +56,13 @@ async function updateData() {
 
   // Loop through each market and update the background color of the cell
   Object.keys(markets).forEach(market => {
+
     const oldPrice = oldMarkets[market]?.indexPrice;
     const newPrice = markets[market].indexPrice;
     const index_cell = document.getElementById(`price-${market}`);
-
     const oldOracle = oldMarkets[market]?.oraclePrice;
     const newOracle = markets[market].oraclePrice;
     const oracle_cell = document.getElementById(`oracle-${market}`);
-
     const signal_cell = document.getElementById(`signal-${market}`);
 
     if (index_cell && newPrice !== oldPrice) {
@@ -58,7 +73,6 @@ async function updateData() {
       }, 500);
     }
 
-
     if (oracle_cell && newOracle !== oldOracle) {
       oracle_cell.style.backgroundColor = newOracle > oldOracle ? "lightgreen" : "tomato";
       setTimeout(() => {
@@ -68,15 +82,22 @@ async function updateData() {
     }
 
     Object.keys(markets).forEach(async (market) => {
-
-      // 獲取 orderbook 數據
       const symbol = market.replace("-", "").replace(" ", "").replace("USD", "USDT");
-      const orderbook = await getOrderbook(symbol);
-
+      const orderbook = await getBybitOrderbook(symbol);
       if (orderbook) {
         const orderbook_cell = document.getElementById(`orderbook-${market}`);
         if (orderbook_cell) {
           orderbook_cell.textContent = `B: ${orderbook.b.join(", ")} | A: ${orderbook.a.join(", ")}`;
+        }
+      }
+    });
+
+    Object.keys(markets).forEach(async (market) => {
+      const dydxOrderbook = await getDydxOrderbook(market);
+      if (dydxOrderbook) {
+        const dydx_orderbook_cell = document.getElementById(`dydx-orderbook-${market}`);
+        if (dydx_orderbook_cell) {
+          dydx_orderbook_cell.textContent = `B: ${dydxOrderbook.b.join(", ")} | A: ${dydxOrderbook.a.join(", ")}`;
         }
       }
     });
@@ -89,7 +110,11 @@ async function updateData() {
 setInterval(updateData, 500);
 
 </script>
+
+
+
 <main in:fade>
+
 <Logo/>
 
 {#if Object.keys(markets).length > 0}
@@ -103,6 +128,7 @@ setInterval(updateData, 500);
         <th>Volume 24H</th>
         <th>Open Interest</th>
         <th>Bybit Orderbook</th>
+        <th>Dydx Orderbook</th>
       </tr>
     </thead>
     <tbody in:fade>
@@ -115,6 +141,7 @@ setInterval(updateData, 500);
           <td>{markets[market].volume24H}</td>
           <td>{markets[market].openInterest}</td>
           <td id={`orderbook-${market}`}></td>
+          <td id={`dydx-orderbook-${market}`}></td>
         </tr>
       {/each}
     </tbody>
