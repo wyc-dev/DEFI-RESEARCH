@@ -248,7 +248,6 @@ h2{
   color : #999999;
 }
 main{
-  background: #EEEEEE;
   width: 100%;
   font-family: 'Nunito Sans';
 }
@@ -259,7 +258,7 @@ table {
   color : #111111;
   width: 100%;
   margin: auto;
-  font-size: 0.8em;
+  font-size: 0.68em;
   border-collapse: collapse;
 }
 
