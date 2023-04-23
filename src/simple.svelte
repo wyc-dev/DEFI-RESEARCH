@@ -21,6 +21,7 @@ async function getDydxOrderbook(symbol) {
     return null;
   }
 }
+
 async function getBybitOrderbook(symbol) {
   const baseUrl = "https://api.bybit.com/v5/market/orderbook";
   const params = new URLSearchParams({
@@ -47,9 +48,33 @@ async function getBybitOrderbook(symbol) {
   }
 }
 
+async function getBinanceOrderbook(symbol) {
+  try {
+    const response = await fetch(`https://api.binance.com/api/v3/depth?limit=1&symbol=${symbol}`);
+    const data = await response.json();
+
+    if (data && data.asks && data.asks.length > 0 && data.bids && data.bids.length > 0) {
+      const bestAsk = data.asks[0];
+      const bestBid = data.bids[0];
+
+      return {
+        a: [bestAsk[0], bestAsk[1]],
+        b: [bestBid[0], bestBid[1]]
+      };
+    } else {
+      return null;
+    }
+  } catch (error) {
+    console.error(`Error fetching Binance orderbook for symbol ${symbol}:`, error);
+    return null;
+  }
+}
+
+
+
 
 async function updateData() {
-  
+
   const response = await fetch("https://api.dydx.exchange/v3/markets");
   const data = await response.json();
   const oldMarkets = markets;
@@ -97,15 +122,27 @@ async function updateData() {
   }
   });
 
-  Object.keys(markets).forEach(async (market) => {
-  const dydxOrderbook = await getDydxOrderbook(market);
-  if (dydxOrderbook) {
-    const dydx_orderbook_cell = document.getElementById(`dydx-orderbook-${market}`);
-    if (dydx_orderbook_cell) {
-      dydx_orderbook_cell.textContent = `B: ${dydxOrderbook.b.join(", ")} | A: ${dydxOrderbook.a.join(", ")}`;
-    }
-  }
-  });
+  // Object.keys(markets).forEach(async (market) => {
+  // const dydxOrderbook = await getDydxOrderbook(market);
+  // if (dydxOrderbook) {
+  //   const dydx_orderbook_cell = document.getElementById(`dydx-orderbook-${market}`);
+  //   if (dydx_orderbook_cell) {
+  //     dydx_orderbook_cell.textContent = `B: ${dydxOrderbook.b.join(", ")} | A: ${dydxOrderbook.a.join(", ")}`;
+  //   }
+  // }
+  // });
+
+  // Object.keys(markets).forEach(async (market) => {
+  // const binanceSymbol = market.replace("-", "").replace(" ", "").replace("USD", "USDT");
+  // const binanceOrderbook = await getBinanceOrderbook(binanceSymbol);
+
+  // if (binanceOrderbook) {
+  //   const binance_orderbook_cell = document.getElementById(`binance-orderbook-${market}`);
+  //   if (binance_orderbook_cell) {
+  //     binance_orderbook_cell.textContent = `B: ${binanceOrderbook.b.join(", ")} | A: ${binanceOrderbook.a.join(", ")}`;
+  //   }
+  // }
+  // });
 }
 
 setInterval(updateData, 500);
@@ -129,7 +166,8 @@ setInterval(updateData, 500);
         <th>Volume 24H</th>
         <th>Open Interest</th>
         <th>Bybit Orderbook</th>
-        <th>Dydx Orderbook</th>
+        <!-- <th>DYDX Orderbook</th>
+        <th>Binance Orderbook</th> -->
       </tr>
     </thead>
     <tbody in:fade>
@@ -142,7 +180,8 @@ setInterval(updateData, 500);
           <td>{markets[market].volume24H}</td>
           <td>{markets[market].openInterest}</td>
           <td id={`orderbook-${market}`}></td>
-          <td id={`dydx-orderbook-${market}`}></td>
+          <!-- <td id={`dydx-orderbook-${market}`}></td>
+          <td id={`binance-orderbook-${market}`}></td> -->
         </tr>
       {/each}
     </tbody>
