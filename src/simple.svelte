@@ -188,6 +188,7 @@ setInterval(updateData, 800);
 <h2>real-time cryptocurrency trend analysis</h2>
 <h2>with decentralized and centralized data</h2>
 <h2 class="g">Green = 📈<h2><h2 class="r">Red = 📉<h2>
+<br>
 
 {#if Object.keys(markets).length > 0}
   <table>
