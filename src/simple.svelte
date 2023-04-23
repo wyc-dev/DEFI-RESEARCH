@@ -184,6 +184,9 @@ setInterval(updateData, 500);
 <main in:fade>
 
 <Logo/>
+<h1>L2 Research</h1>
+<h2>real-time cryptocurrency trend analysis</h2>
+<h2>with decentralized and centralized data</h2>
 
 {#if Object.keys(markets).length > 0}
   <table>
@@ -226,7 +229,14 @@ setInterval(updateData, 500);
 </main>
 
 <style>
-
+h1{
+  font-size: 1.4em;
+  color : #5E1CEC;
+}
+h2{
+  font-size: 1em;
+  color : #5E1CEC;
+}
 main{
   width: 100%;
   font-family: 'Nunito Sans';
