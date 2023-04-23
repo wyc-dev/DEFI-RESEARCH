@@ -106,8 +106,21 @@ async function updateData() {
         oracle_cell.style.backgroundColor = "";
       }, 500);
     }
+    if(newOracle < newPrice && document.getElementById(`bybit-ask-${market}`) < newPrice)
+    {
+      signal_cell.style.backgroundColor = "green" ;
+    }
+    else if(newOracle > newPrice && document.getElementById(`bybit-bid-${market}`) > newPrice)
+    {
+      signal_cell.style.backgroundColor = "red" ;
+    }
+    else
+    {
+      signal_cell.style.backgroundColor = "#999999" ;
+    }
 
-    signal_cell.style.backgroundColor = newOracle < newPrice ? "green" : "red";
+
+    // signal_cell.style.backgroundColor = newOracle < newPrice && document.getElementById(`bybit-bid-${market}`) < newPrice ? "green" : "red";
 
   });
 
