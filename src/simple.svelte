@@ -5,22 +5,22 @@ import Logo from './Logo.svelte';
 
 let markets = {};
 
-async function getDydxOrderbook(symbol) {
-  const response = await fetch(`https://api.dydx.exchange/v3/orderbook/${symbol}`);
-  const data = await response.json();
+// async function getDydxOrderbook(symbol) {
+//   const response = await fetch(`https://api.dydx.exchange/v3/orderbook/${symbol}`);
+//   const data = await response.json();
 
-  if (data && data.asks && data.asks.length > 0 && data.bids && data.bids.length > 0) {
-    const bestAsk = data.asks[0];
-    const bestBid = data.bids[0];
+//   if (data && data.asks && data.asks.length > 0 && data.bids && data.bids.length > 0) {
+//     const bestAsk = data.asks[0];
+//     const bestBid = data.bids[0];
 
-    return {
-      a: [bestAsk.price, bestAsk.size],
-      b: [bestBid.price, bestBid.size]
-    };
-  } else {
-    return null;
-  }
-}
+//     return {
+//       a: [bestAsk.price, bestAsk.size],
+//       b: [bestBid.price, bestBid.size]
+//     };
+//   } else {
+//     return null;
+//   }
+// }
 
 async function getBybitOrderbook(symbol) {
   const baseUrl = "https://api.bybit.com/v5/market/orderbook";
@@ -48,27 +48,27 @@ async function getBybitOrderbook(symbol) {
   }
 }
 
-async function getBinanceOrderbook(symbol) {
-  try {
-    const response = await fetch(`https://api.binance.com/api/v3/depth?limit=1&symbol=${symbol}`);
-    const data = await response.json();
+// async function getBinanceOrderbook(symbol) {
+//   try {
+//     const response = await fetch(`https://api.binance.com/api/v3/depth?limit=1&symbol=${symbol}`);
+//     const data = await response.json();
 
-    if (data && data.asks && data.asks.length > 0 && data.bids && data.bids.length > 0) {
-      const bestAsk = data.asks[0];
-      const bestBid = data.bids[0];
+//     if (data && data.asks && data.asks.length > 0 && data.bids && data.bids.length > 0) {
+//       const bestAsk = data.asks[0];
+//       const bestBid = data.bids[0];
 
-      return {
-        a: [bestAsk[0], bestAsk[1]],
-        b: [bestBid[0], bestBid[1]]
-      };
-    } else {
-      return null;
-    }
-  } catch (error) {
-    console.error(`Error fetching Binance orderbook for symbol ${symbol}:`, error);
-    return null;
-  }
-}
+//       return {
+//         a: [bestAsk[0], bestAsk[1]],
+//         b: [bestBid[0], bestBid[1]]
+//       };
+//     } else {
+//       return null;
+//     }
+//   } catch (error) {
+//     console.error(`Error fetching Binance orderbook for symbol ${symbol}:`, error);
+//     return null;
+//   }
+// }
 
 
 
