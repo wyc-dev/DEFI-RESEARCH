@@ -187,7 +187,7 @@ setInterval(updateData, 500);
 <h1>L2 Research</h1>
 <h2>real-time cryptocurrency trend analysis</h2>
 <h2>with decentralized and centralized data</h2>
-<h2 class="g">Green = 📈<h2><h2 class="r">Red = 📉<h2><h2 class="gr">Grey = ???<h2>
+<h2 class="g">Green = 📈<h2><h2 class="r">Red = 📉<h2>
 
 {#if Object.keys(markets).length > 0}
   <table>
@@ -248,6 +248,7 @@ h2{
   color : #999999;
 }
 main{
+  background: #CCCCCC;
   width: 100%;
   font-family: 'Nunito Sans';
 }
@@ -255,7 +256,7 @@ thead{
   color : #5E1CEC;
 }
 table {
-  color : #111111;
+  color : #444444;
   width: 100%;
   margin: auto;
   font-size: 0.68em;
@@ -264,7 +265,7 @@ table {
 
 @media (max-width: 600px) {
   table {
-    font-size: 0.68em;
+    font-size: 0.59em;
   }
 }
 
