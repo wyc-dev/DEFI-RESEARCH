@@ -5,49 +5,88 @@ import Logo from './Logo.svelte';
 
 let markets = {};
 
-  async function updateData() {
-    const response = await fetch("https://api.dydx.exchange/v3/markets");
+async function getOrderbook(symbol) {
+  const baseUrl = "https://api.bybit.com/v5/market/orderbook";
+  const params = new URLSearchParams({
+    category: "linear",
+    symbol: symbol,
+  });
+
+  try {
+    const response = await fetch(`${baseUrl}?${params.toString()}`);
     const data = await response.json();
-    const oldMarkets = markets;
-    markets = data.markets;
 
-    // Loop through each market and update the background color of the cell
-    Object.keys(markets).forEach(market => {
-      const oldPrice = oldMarkets[market]?.indexPrice;
-      const newPrice = markets[market].indexPrice;
-      const index_cell = document.getElementById(`price-${market}`);
-
-      const oldOracle = oldMarkets[market]?.oraclePrice;
-      const newOracle = markets[market].oraclePrice;
-      const oracle_cell = document.getElementById(`oracle-${market}`);
-
-      const signal_cell = document.getElementById(`signal-${market}`);
-
-      if (index_cell && newPrice !== oldPrice) {
-        index_cell.style.backgroundColor = newPrice > oldPrice ? "lightgreen" : "tomato";
-        // Fade out the background color after 0.5 second
-
-        setTimeout(() => {
-          index_cell.style.transition = "background-color 1s";
-          index_cell.style.backgroundColor = "";
-        }, 500);
-      }
-
-
-      if (oracle_cell && newOracle !== oldOracle) {
-        oracle_cell.style.backgroundColor = newOracle > oldOracle ? "lightgreen" : "tomato";
-        setTimeout(() => {
-          oracle_cell.style.transition = "background-color 1s";
-          oracle_cell.style.backgroundColor = "";
-        }, 500);
-      }
-
-      signal_cell.style.backgroundColor = newOracle < newPrice ? "green" : "red";
-
-    });
+    if (data.retCode === 0) {
+      const result = data.result;
+      const b = result.b[0];
+      const a = result.a[0];
+      return { b, a };
+    } else {
+      console.error(`Error fetching orderbook: ${data.retMsg}`);
+      return null;
+    }
+  } catch (error) {
+    console.error(`Error fetching orderbook: ${error}`);
+    return null;
   }
+}
 
-  setInterval(updateData, 500);
+
+async function updateData() {
+  const response = await fetch("https://api.dydx.exchange/v3/markets");
+  const data = await response.json();
+  const oldMarkets = markets;
+  markets = data.markets;
+
+  // Loop through each market and update the background color of the cell
+  Object.keys(markets).forEach(market => {
+    const oldPrice = oldMarkets[market]?.indexPrice;
+    const newPrice = markets[market].indexPrice;
+    const index_cell = document.getElementById(`price-${market}`);
+
+    const oldOracle = oldMarkets[market]?.oraclePrice;
+    const newOracle = markets[market].oraclePrice;
+    const oracle_cell = document.getElementById(`oracle-${market}`);
+
+    const signal_cell = document.getElementById(`signal-${market}`);
+
+    if (index_cell && newPrice !== oldPrice) {
+      index_cell.style.backgroundColor = newPrice > oldPrice ? "lightgreen" : "tomato";
+      setTimeout(() => {
+        index_cell.style.transition = "background-color 1s";
+        index_cell.style.backgroundColor = "";
+      }, 500);
+    }
+
+
+    if (oracle_cell && newOracle !== oldOracle) {
+      oracle_cell.style.backgroundColor = newOracle > oldOracle ? "lightgreen" : "tomato";
+      setTimeout(() => {
+        oracle_cell.style.transition = "background-color 1s";
+        oracle_cell.style.backgroundColor = "";
+      }, 500);
+    }
+
+    Object.keys(markets).forEach(async (market) => {
+
+      // 獲取 orderbook 數據
+      const symbol = market.replace("-", "").replace(" ", "").replace("USD", "USDT");
+      const orderbook = await getOrderbook(symbol);
+
+      if (orderbook) {
+        const orderbook_cell = document.getElementById(`orderbook-${market}`);
+        if (orderbook_cell) {
+          orderbook_cell.textContent = `B: ${orderbook.b.join(", ")} | A: ${orderbook.a.join(", ")}`;
+        }
+      }
+    });
+
+    signal_cell.style.backgroundColor = newOracle < newPrice ? "green" : "red";
+
+  });
+}
+
+setInterval(updateData, 500);
 
 </script>
 <main in:fade>
@@ -55,7 +94,7 @@ let markets = {};
 
 {#if Object.keys(markets).length > 0}
   <table>
-      <thead in:fade>
+    <thead in:fade>
       <tr>
         <th>Market</th>
         <th>Index Price</th>
@@ -63,6 +102,7 @@ let markets = {};
         <th>Price Change 24H</th>
         <th>Volume 24H</th>
         <th>Open Interest</th>
+        <th>Bybit Orderbook</th>
       </tr>
     </thead>
     <tbody in:fade>
@@ -74,6 +114,7 @@ let markets = {};
           <td>{markets[market].priceChange24H}</td>
           <td>{markets[market].volume24H}</td>
           <td>{markets[market].openInterest}</td>
+          <td id={`orderbook-${market}`}></td>
         </tr>
       {/each}
     </tbody>
