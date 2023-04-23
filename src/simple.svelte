@@ -27,6 +27,7 @@ async function getBybitOrderbook(symbol) {
   const params = new URLSearchParams({
     category: "linear",
     symbol: symbol,
+    limit: 1,
   });
 
   try {
@@ -106,6 +107,7 @@ async function updateData() {
         oracle_cell.style.backgroundColor = "";
       }, 500);
     }
+
     if(newOracle < newPrice && document.getElementById(`bybit-ask-${market}`) < newPrice)
     {
       signal_cell.style.backgroundColor = "green" ;
@@ -175,7 +177,7 @@ async function updateData() {
   // });
 }
 
-setInterval(updateData, 800);
+setInterval(updateData, 1000);
 
 </script>
 
