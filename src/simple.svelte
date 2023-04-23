@@ -175,7 +175,7 @@ async function updateData() {
   // });
 }
 
-setInterval(updateData, 500);
+setInterval(updateData, 800);
 
 </script>
 
