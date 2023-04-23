@@ -49,6 +49,7 @@ async function getBybitOrderbook(symbol) {
 
 
 async function updateData() {
+  
   const response = await fetch("https://api.dydx.exchange/v3/markets");
   const data = await response.json();
   const oldMarkets = markets;
@@ -81,29 +82,29 @@ async function updateData() {
       }, 500);
     }
 
-    Object.keys(markets).forEach(async (market) => {
-      const symbol = market.replace("-", "").replace(" ", "").replace("USD", "USDT");
-      const orderbook = await getBybitOrderbook(symbol);
-      if (orderbook) {
-        const orderbook_cell = document.getElementById(`orderbook-${market}`);
-        if (orderbook_cell) {
-          orderbook_cell.textContent = `B: ${orderbook.b.join(", ")} | A: ${orderbook.a.join(", ")}`;
-        }
-      }
-    });
-
-    Object.keys(markets).forEach(async (market) => {
-      const dydxOrderbook = await getDydxOrderbook(market);
-      if (dydxOrderbook) {
-        const dydx_orderbook_cell = document.getElementById(`dydx-orderbook-${market}`);
-        if (dydx_orderbook_cell) {
-          dydx_orderbook_cell.textContent = `B: ${dydxOrderbook.b.join(", ")} | A: ${dydxOrderbook.a.join(", ")}`;
-        }
-      }
-    });
-
     signal_cell.style.backgroundColor = newOracle < newPrice ? "green" : "red";
 
+  });
+
+  Object.keys(markets).forEach(async (market) => {
+  const symbol = market.replace("-", "").replace(" ", "").replace("USD", "USDT");
+  const orderbook = await getBybitOrderbook(symbol);
+  if (orderbook) {
+    const orderbook_cell = document.getElementById(`orderbook-${market}`);
+    if (orderbook_cell) {
+      orderbook_cell.textContent = `B: ${orderbook.b.join(", ")} | A: ${orderbook.a.join(", ")}`;
+    }
+  }
+  });
+
+  Object.keys(markets).forEach(async (market) => {
+  const dydxOrderbook = await getDydxOrderbook(market);
+  if (dydxOrderbook) {
+    const dydx_orderbook_cell = document.getElementById(`dydx-orderbook-${market}`);
+    if (dydx_orderbook_cell) {
+      dydx_orderbook_cell.textContent = `B: ${dydxOrderbook.b.join(", ")} | A: ${dydxOrderbook.a.join(", ")}`;
+    }
+  }
   });
 }
 
