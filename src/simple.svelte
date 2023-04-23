@@ -112,15 +112,32 @@ async function updateData() {
   });
 
   Object.keys(markets).forEach(async (market) => {
-  const symbol = market.replace("-", "").replace(" ", "").replace("USD", "USDT");
-  const orderbook = await getBybitOrderbook(symbol);
-  if (orderbook) {
-    const orderbook_cell = document.getElementById(`orderbook-${market}`);
-    if (orderbook_cell) {
-      orderbook_cell.textContent = `B: ${orderbook.b.join(", ")} | A: ${orderbook.a.join(", ")}`;
+    const symbol = market.replace("-", "").replace(" ", "").replace("USD", "USDT");
+    const orderbook = await getBybitOrderbook(symbol);
+    if (orderbook) {
+      const bybit_bid_cell = document.getElementById(`bybit-bid-${market}`);
+      const bybit_ask_cell = document.getElementById(`bybit-ask-${market}`);
+      const bybit_bidq_cell = document.getElementById(`bybit-bidq-${market}`);
+      const bybit_askq_cell = document.getElementById(`bybit-askq-${market}`);
+
+
+
+      if (bybit_bid_cell) {
+        bybit_bid_cell.textContent = orderbook.b[0];
+      }
+      if (bybit_bidq_cell) {
+        bybit_bidq_cell.textContent = orderbook.b[1];
+      }
+      if (bybit_ask_cell) {
+        bybit_ask_cell.textContent = orderbook.a[0];
+      }
+      if (bybit_askq_cell) {
+        bybit_askq_cell.textContent = orderbook.a[1];
+      }
     }
-  }
   });
+
+  
 
   // Object.keys(markets).forEach(async (market) => {
   // const dydxOrderbook = await getDydxOrderbook(market);
@@ -162,10 +179,13 @@ setInterval(updateData, 500);
         <th>Market</th>
         <th>Index Price</th>
         <th>Oracle Price</th>
-        <th>Price Change 24H</th>
+        <!-- <th>Price Change 24H</th>
         <th>Volume 24H</th>
-        <th>Open Interest</th>
-        <th>Bybit Orderbook</th>
+        <th>Open Interest</th> -->
+        <th>Orderbook Bid</th>
+        <th>Bid Quantity</th>
+        <th>Orderbook Ask</th>
+        <th>Ask Quantity</th>
         <!-- <th>DYDX Orderbook</th>
         <th>Binance Orderbook</th> -->
       </tr>
@@ -176,10 +196,13 @@ setInterval(updateData, 500);
           <td id={`signal-${market}`}>{markets[market].market}</td>
           <td id={`price-${market}`}>{markets[market].indexPrice}</td>
           <td id={`oracle-${market}`}>{markets[market].oraclePrice}</td>
-          <td>{markets[market].priceChange24H}</td>
+          <!-- <td>{markets[market].priceChange24H}</td>
           <td>{markets[market].volume24H}</td>
-          <td>{markets[market].openInterest}</td>
-          <td id={`orderbook-${market}`}></td>
+          <td>{markets[market].openInterest}</td> -->
+          <td id={`bybit-bid-${market}`}></td>
+          <td id={`bybit-bidq-${market}`}></td>
+          <td id={`bybit-ask-${market}`}></td>
+          <td id={`bybit-askq-${market}`}></td>
           <!-- <td id={`dydx-orderbook-${market}`}></td>
           <td id={`binance-orderbook-${market}`}></td> -->
         </tr>
