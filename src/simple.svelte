@@ -174,9 +174,7 @@ h2{
 .g{
   color : green;
 }
-.gr{
-  color : #999999;
-}
+
 main{
   width: 100%;
   background: white;
