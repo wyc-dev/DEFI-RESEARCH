@@ -34,7 +34,8 @@ import Twitter from './twitter.svelte';
 let markets = {};
 
 async function getBybitOrderbook(symbol) {
-  const baseUrl = "https://api.bybit.com/v5/market/orderbook";
+  const baseUrl = "https://api.bytick.com/v5/market/orderbook";
+  const baseUrl2 = "https://api.bybit.com/v5/market/orderbook";
   const params = new URLSearchParams({
     category: "linear",
     symbol: symbol,
@@ -51,13 +52,25 @@ async function getBybitOrderbook(symbol) {
       const a = result.a[0];
       return { b, a };
     } else {
+      const response2 = await fetch(`${baseUrl2}?${params.toString()}`);
+      const data2 = await response2.json();
+      if (data2.retCode === 0) {
+        const result = data.result;
+        const b = result.b[0];
+        const a = result.a[0];
+        return { b, a };
+      }
+      else { return null; }
       console.error(`Error fetching orderbook: ${data.retMsg}`);
       return null;
     }
+
   } catch (error) {
     console.error(`Error fetching orderbook: ${error}`);
     return null;
   }
+
+
 }
 
 
