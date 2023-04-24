@@ -82,7 +82,7 @@ async function updateData() {
       setTimeout(() => {
         index_cell.style.transition = "background-color 1s";
         index_cell.style.backgroundColor = "";
-      }, 500);
+      }, 1000);
     }
 
     if (oracle_cell && newOracle !== oldOracle) {
@@ -90,7 +90,7 @@ async function updateData() {
       setTimeout(() => {
         oracle_cell.style.transition = "background-color 1s";
         oracle_cell.style.backgroundColor = "";
-      }, 500);
+      }, 1000);
     }
 
     if (newOracle < newPrice && document.getElementById(`bybit-ask-${market}`) < newPrice) {
