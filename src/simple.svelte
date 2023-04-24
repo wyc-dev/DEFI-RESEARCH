@@ -1,30 +1,25 @@
-<svelte:head>
-  <script>
-      const schema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "L2 Research",
-    "url": "https://l2-research.vercel.app/",
-    "description": "Real-time cryptocurrency trend analysis with decentralized and centralized data.",
-    "publisher": {
-      "@type": "Organization",
-      "name": "L2 Research",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://i.ibb.co/k0MG7Xs/L2R.png" 
-      }
-    }
-  };
-
-    const script = document.createElement('script');
-    script.setAttribute('type', 'application/ld+json');
-    script.innerHTML = JSON.stringify(schema);
-    document.head.appendChild(script);
-  </script>
-</svelte:head>
-
 <script>
 
+const schema = {
+"@context": "https://schema.org",
+"@type": "WebSite",
+"name": "L2 Research",
+"url": "https://l2-research.vercel.app/",
+"description": "Real-time cryptocurrency trend analysis with decentralized and centralized data.",
+"publisher": {
+"@type": "Organization",
+"name": "L2 Research",
+"logo": {
+"@type": "ImageObject",
+"url": "https://i.ibb.co/k0MG7Xs/L2R.png" 
+}
+}
+};
+
+const script = document.createElement('script');
+script.setAttribute('type', 'application/ld+json');
+script.innerHTML = JSON.stringify(schema);
+document.head.appendChild(script);
 
 
 import { fade } from 'svelte/transition';
@@ -230,6 +225,7 @@ main{
   min-height:100vh;
   background: #DDDDDD;
   font-family: 'Nunito Sans';
+  border-radius: 90px;
 }
 thead{
   color : #111111;
@@ -253,6 +249,7 @@ table {
   }
   table {
     font-size: 0.59em;
+    
   }
 }
 </style>
