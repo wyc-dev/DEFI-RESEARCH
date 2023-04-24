@@ -227,7 +227,7 @@ h2{
 main{
   width: 100%;
   min-height:100vh;
-  background: #DDDDDD;
+  background: #EEEEEE;
   font-family: 'Nunito Sans';
   border-radius: 90px;
 }
@@ -241,7 +241,7 @@ table {
   font-size: 0.8em;
   border-collapse: collapse;
 }
-@media (max-width: 600px) {
+@media (max-width: 610px) {
   h1{
     font-size: 1.1em;
   }
@@ -253,12 +253,24 @@ table {
   }
   table {
     font-size: 0.59em;
-    
   }
 }
-
+@media (max-width: 390px) {
+  h1{
+    font-size: 0.68em;
+  }
+  h2{
+    font-size: 0.6em;
+  }
+  thead{
+    font-size: 1em;
+  }
+  table {
+    font-size: 0.31em;
+  }
+}
 .bordered {
-  border: 3px solid;
+  border: 1px solid;
   animation: colorChange 0.5s infinite alternate;
 }
 
