@@ -33,7 +33,7 @@ async function getBybitOrderbook(symbol) {
   const baseUrl1 = "https://api.bytick.com/v5/market/orderbook";
   const baseUrl2 = "https://api.bybit.com/v5/market/orderbook";
   const baseUrls = [baseUrl1, baseUrl2];
-  
+
   const params = new URLSearchParams({
     category: "linear",
     symbol: symbol,
