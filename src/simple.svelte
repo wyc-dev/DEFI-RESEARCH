@@ -158,7 +158,7 @@ setInterval(updateData, 1000);
 <h1>L2 Research</h1>
 <h2>real-time cryptocurrency trend analysis</h2>
 <h2>with decentralized and centralized data</h2>
-<h2 class="g">Green = 📈<h2><h2 class="r">Red = 📉<h2>
+<h2 class="g">Green = 📈</h2><h2 class="r">Red = 📉</h2>
 <br>
 
 {#if Object.keys(markets).length > 0}
@@ -235,6 +235,15 @@ table {
   border-collapse: collapse;
 }
 @media (max-width: 600px) {
+  h1{
+    font-size: 1.1em;
+  }
+  h2{
+    font-size: 0.8em;
+  }
+  thead{
+    font-size: 1em;
+  }
   table {
     font-size: 0.59em;
   }
