@@ -228,7 +228,7 @@ h2{
 main{
   width: 100%;
   min-height:100vh;
-  background: #CCCCCC;
+  background: #DDDDDD;
   font-family: 'Nunito Sans';
 }
 thead{
