@@ -164,7 +164,7 @@ setInterval(updateOrderbook, 1000);
   <meta name="description" content="L2 Research provides real-time cryptocurrency trend analysis with decentralized and centralized data. Stay updated with the latest market trends and make informed decisions.">
 </head>
 
-<main in:fade style="border: 1px solid black;">
+<main in:fade class="bordered">
 
 <br><Logo/><br><br>
 <h1>L2 Research</h1>
@@ -254,6 +254,20 @@ table {
   table {
     font-size: 0.59em;
     
+  }
+}
+
+.bordered {
+  border: 3px solid;
+  animation: colorChange 0.5s infinite alternate;
+}
+
+@keyframes colorChange {
+  0% {
+    border-color: red;
+  }
+  100% {
+    border-color: green;
   }
 }
 </style>
