@@ -1,4 +1,5 @@
-<script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1031236648197201"
+     crossorigin="anonymous">
 
 import { fade } from 'svelte/transition';
 import Logo from './l2logo.svelte';
@@ -267,7 +268,7 @@ table {
 }
 @media (max-width: 390px) {
   h1{
-    font-size: 0.68em;
+    font-size: 0.86em;
   }
   h2{
     font-size: 0.6em;
