@@ -224,7 +224,7 @@ table {
   color : #444444;
   width: 100%;
   margin: auto;
-  font-size: 0.68em;
+  font-size: 0.8em;
   border-collapse: collapse;
 }
 @media (max-width: 600px) {
