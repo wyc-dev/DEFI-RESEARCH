@@ -101,7 +101,7 @@ async function updateData() {
     } else if (newOracle > newPrice && document.getElementById(`bybit-bid-${market}`) > newPrice) {
       signal_cell.style.backgroundColor = "red";
     } else {
-      signal_cell.style.backgroundColor = "#999999";
+      signal_cell.style.backgroundColor = "black";
     }
   });
 
@@ -224,7 +224,9 @@ setInterval(updateOrderbook, 1000);
   justify-content: center;
 }
 .big{
+  padding: 3px;
   font-size: 1.1em;
+  color : white;
 }
 a{
   margin:9px;
@@ -285,7 +287,7 @@ table {
     font-size: 1em;
   }
   table {
-    font-size: 0.31em;
+    font-size: 0.41em;
   }
 }
 .bordered {
