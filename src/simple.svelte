@@ -242,12 +242,12 @@ html{
 main{
   width: 100%;
   min-height:100vh;
-  background: #EEEEEE;
+  background: #DDDDDD;
   font-family: 'Nunito Sans';
   border-radius: 90px;
 }
 thead{
-  color : #111111;
+  color : black;
 }
 table {
   color : #444444;
