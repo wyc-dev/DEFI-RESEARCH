@@ -202,7 +202,7 @@ setInterval(updateOrderbook, 1000);
 {/if}
 
 <br><a data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a> <br> <br>
-<h2>LFG BUIDL 🖤 WAGMI ♠️</h2>
+<h2>🖤 WAGMI ♠️</h2>
 </main>
 
 
