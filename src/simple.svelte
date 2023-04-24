@@ -207,6 +207,10 @@ setInterval(updateOrderbook, 1000);
 <a data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
 <br>
 </div> <br> <h2>🖤 WAGMI ♠️</h2> 
+
+<amp-auto-ads type="adsense"
+        data-ad-client="ca-pub-1031236648197201">
+</amp-auto-ads>
 </main> </html>
 
 
