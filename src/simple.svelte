@@ -230,6 +230,8 @@ h2{
   color : #444444;
 }
 html{
+  left: 50%;
+  right:50%;
   background: black;
 }
 main{
