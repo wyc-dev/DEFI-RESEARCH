@@ -1,5 +1,10 @@
 <script>
 
+import { fade } from 'svelte/transition';
+import Logo from './l2logo.svelte';
+import Twitter from './twitter.svelte';
+
+
 const schema = {
 "@context": "https://schema.org",
 "@type": "WebSite",
@@ -20,11 +25,6 @@ const script = document.createElement('script');
 script.setAttribute('type', 'application/ld+json');
 script.innerHTML = JSON.stringify(schema);
 document.head.appendChild(script);
-
-
-import { fade } from 'svelte/transition';
-import Logo from './l2logo.svelte';
-import Twitter from './twitter.svelte';
 
 let markets = {};
 
@@ -110,6 +110,10 @@ async function updateData() {
     }
   });
 
+}
+
+async function updateOrderbook() {
+  // Update Bybit orderbook data
   Object.keys(markets).forEach(async (market) => {
     const symbol = market.replace("-", "").replace(" ", "").replace("USD", "USDT");
     const orderbook = await getBybitOrderbook(symbol);
@@ -148,10 +152,10 @@ async function updateData() {
       }
     }
   });
-
 }
 
 setInterval(updateData, 1000);
+setInterval(updateOrderbook, 1000);
 
 </script>
 
