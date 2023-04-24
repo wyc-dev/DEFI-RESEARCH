@@ -153,12 +153,18 @@ setInterval(updateOrderbook, 1000);
 
 </script>
 
+<html class="bordered">
 <head>
   <title>L2 Research - Real-time Cryptocurrency Trend Analysis with DeFi x CeFi data</title>
   <meta name="description" content="L2 Research provides real-time cryptocurrency trend analysis with decentralized and centralized data. Stay updated with the latest market trends and make informed decisions.">
 </head>
 
-<main in:fade class="bordered">
+<main in:fade>
+
+<head>
+  <title>L2 Research - Real-time Cryptocurrency Trend Analysis with DeFi x CeFi data</title>
+  <meta name="description" content="L2 Research provides real-time cryptocurrency trend analysis with decentralized and centralized data. Stay updated with the latest market trends and make informed decisions.">
+</head>
 
 <br><Logo/><br><br>
 <h1>L2 Research</h1>
@@ -200,7 +206,7 @@ setInterval(updateOrderbook, 1000);
 <a data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
 <br>
 </div> <br> <h2>🖤 WAGMI ♠️</h2> 
-</main>
+</main> </html>
 
 
 <style>
@@ -223,7 +229,9 @@ h2{
   font-size: 1em;
   color : #444444;
 }
-
+html{
+  background: black;
+}
 main{
   width: 100%;
   min-height:100vh;
@@ -270,7 +278,7 @@ table {
   }
 }
 .bordered {
-  border: 1px solid;
+  border: 3px solid;
   animation: colorChange 0.5s infinite alternate;
 }
 
