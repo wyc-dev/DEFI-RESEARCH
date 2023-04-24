@@ -30,44 +30,37 @@ document.head.appendChild(script);
 let markets = {};
 
 async function getBybitOrderbook(symbol) {
-  const baseUrl = "https://api.bytick.com/v5/market/orderbook";
+  const baseUrl1 = "https://api.bytick.com/v5/market/orderbook";
   const baseUrl2 = "https://api.bybit.com/v5/market/orderbook";
+  const baseUrls = [baseUrl1, baseUrl2];
+  
   const params = new URLSearchParams({
     category: "linear",
     symbol: symbol,
     limit: 1,
   });
 
-  try {
-    const response = await fetch(`${baseUrl}?${params.toString()}`);
-    const data = await response.json();
+  for (const baseUrl of baseUrls) {
+    try {
+      const response = await fetch(`${baseUrl}?${params.toString()}`);
+      const data = await response.json();
 
-    if (data.retCode === 0) {
-      const result = data.result;
-      const b = result.b[0];
-      const a = result.a[0];
-      return { b, a };
-    } else {
-      const response2 = await fetch(`${baseUrl2}?${params.toString()}`);
-      const data2 = await response2.json();
-      if (data2.retCode === 0) {
+      if (data.retCode === 0 && data.result && data.result.b && data.result.a) {
         const result = data.result;
         const b = result.b[0];
         const a = result.a[0];
         return { b, a };
+      } else {
+        console.error(`Error fetching orderbook from ${baseUrl}: ${data.retMsg}`);
       }
-      else { return null; }
-      console.error(`Error fetching orderbook: ${data.retMsg}`);
-      return null;
+    } catch (error) {
+      console.error(`Error fetching orderbook from ${baseUrl}: ${error}`);
     }
-
-  } catch (error) {
-    console.error(`Error fetching orderbook: ${error}`);
-    return null;
   }
 
-
+  return null;
 }
+
 
 
 async function updateData() {
