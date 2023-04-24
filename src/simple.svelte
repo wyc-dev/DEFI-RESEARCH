@@ -113,7 +113,7 @@ setInterval(updateData, 1000);
 
 <main in:fade>
 
-<Logo/>
+<br><Logo/><br><br>
 <h1>L2 Research</h1>
 <h2>real-time cryptocurrency trend analysis</h2>
 <h2>with decentralized and centralized data</h2>
@@ -152,6 +152,10 @@ setInterval(updateData, 1000);
 
 
 <style>
+*{
+  padding:0px;
+  margin:0px;
+}
 h1{
   font-size: 1.4em;
   color : #444444;
@@ -169,13 +173,10 @@ h2{
 .gr{
   color : #999999;
 }
-main {
-  background-color: white;  /* Change the background color to white */
+main{
+  width: 100%;
+  background: white;
   font-family: 'Nunito Sans';
-  display: flex;  /* Add this line to center the content vertically and horizontally */
-  flex-direction: column;  /* Add this line to center the content vertically and horizontally */
-  align-items: center;  /* Add this line to center the content vertically and horizontally */
-  justify-content: center;  /* Add this line to center the content vertically and horizontally */
 }
 thead{
   color : #111111;
