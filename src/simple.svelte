@@ -62,7 +62,6 @@ async function getBybitOrderbook(symbol) {
 
 
 async function updateData() {
-
   const response = await fetch("https://api.dydx.exchange/v3/markets");
   const data = await response.json();
   const oldMarkets = markets;
@@ -70,7 +69,6 @@ async function updateData() {
 
   // Loop through each market and update the background color of the cell
   Object.keys(markets).forEach(market => {
-
     const oldPrice = oldMarkets[market]?.indexPrice;
     const newPrice = markets[market].indexPrice;
     const index_cell = document.getElementById(`price-${market}`);
@@ -95,19 +93,13 @@ async function updateData() {
       }, 500);
     }
 
-    if(newOracle < newPrice && document.getElementById(`bybit-ask-${market}`) < newPrice)
-    {
-      signal_cell.style.backgroundColor = "green" ;
+    if (newOracle < newPrice && document.getElementById(`bybit-ask-${market}`) < newPrice) {
+      signal_cell.style.backgroundColor = "green";
+    } else if (newOracle > newPrice && document.getElementById(`bybit-bid-${market}`) > newPrice) {
+      signal_cell.style.backgroundColor = "red";
+    } else {
+      signal_cell.style.backgroundColor = "#999999";
     }
-    else if(newOracle > newPrice && document.getElementById(`bybit-bid-${market}`) > newPrice)
-    {
-      signal_cell.style.backgroundColor = "red" ;
-    }
-    else
-    {
-      signal_cell.style.backgroundColor = "#999999" ;
-    }
-
   });
 
   Object.keys(markets).forEach(async (market) => {
@@ -118,6 +110,21 @@ async function updateData() {
       const bybit_ask_cell = document.getElementById(`bybit-ask-${market}`);
       const bybit_bidq_cell = document.getElementById(`bybit-bidq-${market}`);
       const bybit_askq_cell = document.getElementById(`bybit-askq-${market}`);
+
+      const updateCellColor = (cell, newValue, oldValue) => {
+        if (cell && newValue !== oldValue) {
+          cell.style.backgroundColor = newValue > oldValue ? "lightgreen" : "tomato";
+          setTimeout(() => {
+            cell.style.transition = "background-color 1s";
+            cell.style.backgroundColor = "";
+          }, 500);
+        }
+      };
+
+      updateCellColor(bybit_bid_cell, orderbook.b[0], bybit_bid_cell.textContent);
+      updateCellColor(bybit_ask_cell, orderbook.a[0], bybit_ask_cell.textContent);
+      updateCellColor(bybit_bidq_cell, orderbook.b[1], bybit_bidq_cell.textContent);
+      updateCellColor(bybit_askq_cell, orderbook.a[1], bybit_askq_cell.textContent);
 
       if (bybit_bid_cell) {
         bybit_bid_cell.textContent = orderbook.b[0];
