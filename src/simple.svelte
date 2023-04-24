@@ -70,7 +70,6 @@ async function updateData() {
   const oldMarkets = markets;
   markets = data.markets;
 
-  // Loop through each market and update the background color of the cell
   Object.keys(markets).forEach(market => {
     const oldPrice = oldMarkets[market]?.indexPrice;
     const newPrice = markets[market].indexPrice;
@@ -96,11 +95,16 @@ async function updateData() {
       }, 1000);
     }
 
-    if (newOracle < newPrice && document.getElementById(`bybit-ask-${market}`) < newPrice) {
+    if (newOracle < newPrice < document.getElementById(`bybit-bid-${market}`) < document.getElementById(`binance-price-${market}`)) 
+    {
       signal_cell.style.backgroundColor = "green";
-    } else if (newOracle > newPrice && document.getElementById(`bybit-bid-${market}`) > newPrice) {
+    }
+    else if (newOracle > newPrice > document.getElementById(`bybit-bid-${market}`) > document.getElementById(`binance-price-${market}`))
+    {
       signal_cell.style.backgroundColor = "red";
-    } else {
+    }
+    else 
+    {
       signal_cell.style.backgroundColor = "black";
     }
   });
@@ -195,8 +199,8 @@ async function updateTableWithBinanceData() {
 }
 
 setInterval(updateData, 1000);
-setInterval(updateOrderbook, 5000);
-setInterval(updateTableWithBinanceData, 5000);
+setInterval(updateOrderbook, 6000);
+setInterval(updateTableWithBinanceData, 6000);
 
 </script>
 
