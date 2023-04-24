@@ -150,7 +150,7 @@ async function updateOrderbook() {
 }
 
 setInterval(updateData, 1000);
-setInterval(updateOrderbook, 3000);
+setInterval(updateOrderbook, 4000);
 
 </script>
 
