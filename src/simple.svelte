@@ -155,6 +155,10 @@ setInterval(updateData, 1000);
 *{
   padding:0px;
   margin:0px;
+  font-family: 'Nunito Sans';
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
 h1{
   font-size: 1.4em;
