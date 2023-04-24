@@ -1,4 +1,23 @@
-<script>
+<script type="application/ld+json">
+
+
+{
+  "@context": "https://l2-research.vercel.app/",
+  "@type": "WebSite",
+  "name": "L2 Research",
+  "url": "https://l2-research.vercel.app/",
+  "description": "Real-time cryptocurrency trend analysis with decentralized and centralized data.",
+  "publisher": {
+    "@type": "Organization",
+    "name": "L2 Research",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://i.ibb.co/k0MG7Xs/L2R.png" 
+    }
+  }
+}
+
+
 import { fade } from 'svelte/transition';
 import Logo from './l2logo.svelte';
 import Twitter from './twitter.svelte';
@@ -111,6 +130,11 @@ async function updateData() {
 setInterval(updateData, 1000);
 
 </script>
+
+<head>
+  <title>L2 Research - Real-time Cryptocurrency Trend Analysis with DeFi x CeFi data</title>
+  <meta name="description" content="L2 Research provides real-time cryptocurrency trend analysis with decentralized and centralized data. Stay updated with the latest market trends and make informed decisions.">
+</head>
 
 <main in:fade>
 
