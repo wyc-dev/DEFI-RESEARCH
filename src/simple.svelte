@@ -111,10 +111,10 @@ setInterval(updateData, 1000);
 
 </script>
 
-<body in:fade>
+<main in:fade>
 
-<br><Logo/> <br>
-<h1>L2 Research</h1><div></div>
+<Logo/>
+<h1>L2 Research</h1>
 <h2>real-time cryptocurrency trend analysis</h2>
 <h2>with decentralized and centralized data</h2>
 <h2 class="g">Green = 📈<h2><h2 class="r">Red = 📉<h2>
@@ -148,14 +148,10 @@ setInterval(updateData, 1000);
     </tbody>
   </table>
 {/if}
-</body>
+</main>
 
 
 <style>
-*{
-    margin: 0px;
-    padding: 0px;
-}
 h1{
   font-size: 1.4em;
   color : #444444;
@@ -173,21 +169,20 @@ h2{
 .gr{
   color : #999999;
 }
-
-body {
-  width: 100%;
+main {
   background-color: white;  /* Change the background color to white */
   font-family: 'Nunito Sans';
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
+  display: flex;  /* Add this line to center the content vertically and horizontally */
+  flex-direction: column;  /* Add this line to center the content vertically and horizontally */
+  align-items: center;  /* Add this line to center the content vertically and horizontally */
+  justify-content: center;  /* Add this line to center the content vertically and horizontally */
 }
 thead{
   color : #111111;
 }
 table {
   color : #444444;
+  width: 100%;
   margin: auto;
   font-size: 0.68em;
   border-collapse: collapse;
