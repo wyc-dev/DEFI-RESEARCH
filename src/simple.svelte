@@ -149,8 +149,54 @@ async function updateOrderbook() {
   });
 }
 
+
+
+async function getBinancePrice(symbol) {
+  const baseUrl = "https://api.binance.com/api/v3/ticker/price";
+  const params = new URLSearchParams({ symbol });
+
+  try {
+    const response = await fetch(`${baseUrl}?${params.toString()}`);
+    const data = await response.json();
+    if (data && data.price) {
+      return parseFloat(data.price);
+    } else {
+      console.error(`Error fetching price from Binance API: ${JSON.stringify(data)}`);
+    }
+  } catch (error) {
+    console.error(`Error fetching price from Binance API: ${error}`);
+  }
+
+  return null;
+}
+
+async function updateTableWithBinanceData() {
+  Object.keys(markets).forEach(async (market) => {
+    const symbol = market.replace("-", "").replace(" ", "").replace("USD", "USDT");
+    const binancePrice = await getBinancePrice(symbol);
+
+    if (binancePrice !== null) {
+      const binance_price_cell = document.getElementById(`binance-price-${market}`);
+      const oldValue = parseFloat(binance_price_cell.textContent);
+
+      if (binance_price_cell && binancePrice !== oldValue) {
+        binance_price_cell.style.backgroundColor = binancePrice > oldValue ? "lightgreen" : "tomato";
+        setTimeout(() => {
+          binance_price_cell.style.transition = "background-color 1s";
+          binance_price_cell.style.backgroundColor = "";
+        }, 1000);
+      }
+
+      if (binance_price_cell) {
+        binance_price_cell.textContent = binancePrice;
+      }
+    }
+  });
+}
+
 setInterval(updateData, 1000);
-setInterval(updateOrderbook, 4000);
+setInterval(updateOrderbook, 5000);
+setInterval(updateTableWithBinanceData, 5000);
 
 </script>
 
@@ -178,8 +224,9 @@ setInterval(updateOrderbook, 4000);
     <thead in:fade>
       <tr>
         <th></th>
-        <th>Index Price</th>
-        <th>Oracle Price</th>
+        <th>CEX Spot</th>
+        <th>DEX Index</th>
+        <th>DEX Oracle</th>
         <th>Bid</th>
         <th>Quantity</th>
         <th>Ask</th>
@@ -190,6 +237,7 @@ setInterval(updateOrderbook, 4000);
       {#each Object.keys(markets) as market}
         <tr>
           <td class="big" id={`signal-${market}`}>{markets[market].market.replace("-", "").replace(" ", "").replace("USD", "")}</td>
+          <td id={`binance-price-${market}`}></td>
           <td id={`price-${market}`}>{markets[market].indexPrice}</td>
           <td id={`oracle-${market}`}>{markets[market].oraclePrice}</td>
           <td id={`bybit-bid-${market}`}></td>
