@@ -189,7 +189,8 @@ setInterval(updateData, 1000);
   </table>
 {/if}
 
-<br><a data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a> <br>
+<br><a data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a> <br> <br>
+<h2>LFG BUIDL 🖤 WAGMI ♠️</h2>
 </main>
 
 
