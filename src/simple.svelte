@@ -113,7 +113,7 @@ setInterval(updateData, 1000);
 
 <body in:fade>
 
-<Logo/> <br>
+<br><Logo/> <br>
 <h1>L2 Research</h1><div></div>
 <h2>real-time cryptocurrency trend analysis</h2>
 <h2>with decentralized and centralized data</h2>
@@ -155,7 +155,6 @@ setInterval(updateData, 1000);
 *{
     margin: 0px;
     padding: 0px;
-    width: 100%;
 }
 h1{
   font-size: 1.4em;
@@ -189,7 +188,6 @@ thead{
 }
 table {
   color : #444444;
-  width: 100%;
   margin: auto;
   font-size: 0.68em;
   border-collapse: collapse;
