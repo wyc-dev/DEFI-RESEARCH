@@ -95,11 +95,11 @@ async function updateData() {
       }, 1000);
     }
 
-    if (newOracle < newPrice < document.getElementById(`bybit-bid-${market}`) < document.getElementById(`binance-price-${market}`)) 
+    if (newOracle < document.getElementById(`bybit-bid-${market}`) && document.getElementById(`binance-price-${market}`) < newPrice) 
     {
       signal_cell.style.backgroundColor = "green";
     }
-    else if (newOracle > newPrice > document.getElementById(`bybit-bid-${market}`) > document.getElementById(`binance-price-${market}`))
+    else if (newOracle > document.getElementById(`bybit-bid-${market}`) && document.getElementById(`binance-price-${market}`)> newPrice) 
     {
       signal_cell.style.backgroundColor = "red";
     }
@@ -156,7 +156,7 @@ async function updateOrderbook() {
 
 
 async function getBinancePrice(symbol) {
-  const baseUrl = "https://api.binance.com/api/v3/ticker/price";
+  const baseUrl = "https://api.binance.us/api/v3/ticker/price";
   const params = new URLSearchParams({ symbol });
 
   try {
@@ -197,18 +197,14 @@ async function updateTableWithBinanceData() {
     }
   });
 }
-
-setInterval(updateData, 1000);
+updateTableWithBinanceData();
+setInterval(updateData, 500);
 setInterval(updateOrderbook, 6000);
-setInterval(updateTableWithBinanceData, 6000);
+setInterval(updateTableWithBinanceData, 60000);
 
 </script>
 
 <html class="bordered">
-<head>
-  <title>L2 Research - Real-time Cryptocurrency Trend Analysis with DeFi x CeFi data</title>
-  <meta name="description" content="L2 Research provides real-time cryptocurrency trend analysis with decentralized and centralized data. Stay updated with the latest market trends and make informed decisions.">
-</head>
 
 <main in:fade>
 
