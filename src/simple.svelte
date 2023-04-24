@@ -177,19 +177,19 @@ setInterval(updateOrderbook, 1000);
   <table>
     <thead in:fade>
       <tr>
-        <th>Market</th>
+        <th></th>
         <th>Index Price</th>
         <th>Oracle Price</th>
-        <th>Orderbook Bid</th>
-        <th>Bid Quantity</th>
-        <th>Orderbook Ask</th>
-        <th>Ask Quantity</th>
+        <th>Bid</th>
+        <th>Quantity</th>
+        <th>Ask</th>
+        <th>Quantity</th>
       </tr>
     </thead>
     <tbody in:fade>
       {#each Object.keys(markets) as market}
         <tr>
-          <td id={`signal-${market}`}>{markets[market].market}</td>
+          <td class="big" id={`signal-${market}`}>{markets[market].market.replace("-", "").replace(" ", "").replace("USD", "")}</td>
           <td id={`price-${market}`}>{markets[market].indexPrice}</td>
           <td id={`oracle-${market}`}>{markets[market].oraclePrice}</td>
           <td id={`bybit-bid-${market}`}></td>
@@ -223,6 +223,9 @@ setInterval(updateOrderbook, 1000);
   text-align: center;
   justify-content: center;
 }
+.big{
+  font-size: 1.1em;
+}
 a{
   margin:9px;
 }
@@ -235,6 +238,7 @@ h2{
   color : #444444;
 }
 html{
+  padding: 6px;
   left: 50%;
   right:50%;
   background: black;
