@@ -117,7 +117,7 @@ async function updateData() {
           setTimeout(() => {
             cell.style.transition = "background-color 1s";
             cell.style.backgroundColor = "";
-          }, 500);
+          }, 1000);
         }
       };
 
