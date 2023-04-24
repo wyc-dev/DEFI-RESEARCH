@@ -156,7 +156,7 @@ async function updateOrderbook() {
 
 
 async function getBinancePrice(symbol) {
-  const baseUrl = "https://api.binance.us/api/v3/ticker/price";
+  const baseUrl = "https://api.binance.com/api/v3/ticker/price";
   const params = new URLSearchParams({ symbol });
 
   try {
