@@ -1,21 +1,30 @@
-<script type="application/ld+json">
-
-
-{
-  "@context": "https://l2-research.vercel.app/",
-  "@type": "WebSite",
-  "name": "L2 Research",
-  "url": "https://l2-research.vercel.app/",
-  "description": "Real-time cryptocurrency trend analysis with decentralized and centralized data.",
-  "publisher": {
-    "@type": "Organization",
+<svelte:head>
+  <script>
+      const schema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
     "name": "L2 Research",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://i.ibb.co/k0MG7Xs/L2R.png" 
+    "url": "https://l2-research.vercel.app/",
+    "description": "Real-time cryptocurrency trend analysis with decentralized and centralized data.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "L2 Research",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://i.ibb.co/k0MG7Xs/L2R.png" 
+      }
     }
-  }
-}
+  };
+
+    const script = document.createElement('script');
+    script.setAttribute('type', 'application/ld+json');
+    script.innerHTML = JSON.stringify(schema);
+    document.head.appendChild(script);
+  </script>
+</svelte:head>
+
+<script>
+
 
 
 import { fade } from 'svelte/transition';
@@ -174,7 +183,7 @@ setInterval(updateData, 1000);
   </table>
 {/if}
 
-<br><a data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a>
+<br><a data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a> <br>
 </main>
 
 
@@ -204,7 +213,8 @@ h2{
 
 main{
   width: 100%;
-  background: white;
+  min-height:100vh;
+  background: #CCCCCC;
   font-family: 'Nunito Sans';
 }
 thead{
