@@ -3,6 +3,7 @@
 import { fade } from 'svelte/transition';
 import Logo from './l2logo.svelte';
 import Twitter from './twitter.svelte';
+import Linkedin from './linkedin.svelte';
 
 
 const schema = {
@@ -201,8 +202,11 @@ setInterval(updateOrderbook, 1000);
   </table>
 {/if}
 
-<br><a data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a> <br> <br>
-<h2>🖤 WAGMI ♠️</h2>
+<br>
+<div><a data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a>
+<a data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
+<br>
+</div> <br> <h2>🖤 WAGMI ♠️</h2> 
 </main>
 
 
@@ -214,6 +218,9 @@ setInterval(updateOrderbook, 1000);
   flex-direction: column;
   text-align: center;
   justify-content: center;
+}
+a{
+  margin:9px;
 }
 h1{
   font-size: 1.4em;
