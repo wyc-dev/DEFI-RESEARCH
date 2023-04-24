@@ -2,7 +2,25 @@
 import { fade } from 'svelte/transition';
 import Logo from './l2logo.svelte';
 
+
 let markets = {};
+
+// async function getDydxOrderbook(symbol) {
+//   const response = await fetch(`https://api.dydx.exchange/v3/orderbook/${symbol}`);
+//   const data = await response.json();
+
+//   if (data && data.asks && data.asks.length > 0 && data.bids && data.bids.length > 0) {
+//     const bestAsk = data.asks[0];
+//     const bestBid = data.bids[0];
+
+//     return {
+//       a: [bestAsk.price, bestAsk.size],
+//       b: [bestBid.price, bestBid.size]
+//     };
+//   } else {
+//     return null;
+//   }
+// }
 
 async function getBybitOrderbook(symbol) {
   const baseUrl = "https://api.bybit.com/v5/market/orderbook";
@@ -30,6 +48,30 @@ async function getBybitOrderbook(symbol) {
     return null;
   }
 }
+
+// async function getBinanceOrderbook(symbol) {
+//   try {
+//     const response = await fetch(`https://api.binance.com/api/v3/depth?limit=1&symbol=${symbol}`);
+//     const data = await response.json();
+
+//     if (data && data.asks && data.asks.length > 0 && data.bids && data.bids.length > 0) {
+//       const bestAsk = data.asks[0];
+//       const bestBid = data.bids[0];
+
+//       return {
+//         a: [bestAsk[0], bestAsk[1]],
+//         b: [bestBid[0], bestBid[1]]
+//       };
+//     } else {
+//       return null;
+//     }
+//   } catch (error) {
+//     console.error(`Error fetching Binance orderbook for symbol ${symbol}:`, error);
+//     return null;
+//   }
+// }
+
+
 
 
 async function updateData() {
@@ -79,6 +121,9 @@ async function updateData() {
       signal_cell.style.backgroundColor = "#999999" ;
     }
 
+
+    // signal_cell.style.backgroundColor = newOracle < newPrice && document.getElementById(`bybit-bid-${market}`) < newPrice ? "green" : "red";
+
   });
 
   Object.keys(markets).forEach(async (market) => {
@@ -89,6 +134,8 @@ async function updateData() {
       const bybit_ask_cell = document.getElementById(`bybit-ask-${market}`);
       const bybit_bidq_cell = document.getElementById(`bybit-bidq-${market}`);
       const bybit_askq_cell = document.getElementById(`bybit-askq-${market}`);
+
+
 
       if (bybit_bid_cell) {
         bybit_bid_cell.textContent = orderbook.b[0];
@@ -105,16 +152,39 @@ async function updateData() {
     }
   });
 
+  
+
+  // Object.keys(markets).forEach(async (market) => {
+  // const dydxOrderbook = await getDydxOrderbook(market);
+  // if (dydxOrderbook) {
+  //   const dydx_orderbook_cell = document.getElementById(`dydx-orderbook-${market}`);
+  //   if (dydx_orderbook_cell) {
+  //     dydx_orderbook_cell.textContent = `B: ${dydxOrderbook.b.join(", ")} | A: ${dydxOrderbook.a.join(", ")}`;
+  //   }
+  // }
+  // });
+
+  // Object.keys(markets).forEach(async (market) => {
+  // const binanceSymbol = market.replace("-", "").replace(" ", "").replace("USD", "USDT");
+  // const binanceOrderbook = await getBinanceOrderbook(binanceSymbol);
+
+  // if (binanceOrderbook) {
+  //   const binance_orderbook_cell = document.getElementById(`binance-orderbook-${market}`);
+  //   if (binance_orderbook_cell) {
+  //     binance_orderbook_cell.textContent = `B: ${binanceOrderbook.b.join(", ")} | A: ${binanceOrderbook.a.join(", ")}`;
+  //   }
+  // }
+  // });
 }
 
 setInterval(updateData, 1000);
 
 </script>
 
-<body in:fade>
+<main in:fade>
 
-<Logo/> <br>
-<h1>L2 Research</h1><div></div>
+<Logo/>
+<h1>L2 Research</h1>
 <h2>real-time cryptocurrency trend analysis</h2>
 <h2>with decentralized and centralized data</h2>
 <h2 class="g">Green = 📈<h2><h2 class="r">Red = 📉<h2>
@@ -127,10 +197,15 @@ setInterval(updateData, 1000);
         <th>Market</th>
         <th>Index Price</th>
         <th>Oracle Price</th>
+        <!-- <th>Price Change 24H</th>
+        <th>Volume 24H</th>
+        <th>Open Interest</th> -->
         <th>Orderbook Bid</th>
         <th>Bid Quantity</th>
         <th>Orderbook Ask</th>
         <th>Ask Quantity</th>
+        <!-- <th>DYDX Orderbook</th>
+        <th>Binance Orderbook</th> -->
       </tr>
     </thead>
     <tbody in:fade>
@@ -139,24 +214,24 @@ setInterval(updateData, 1000);
           <td id={`signal-${market}`}>{markets[market].market}</td>
           <td id={`price-${market}`}>{markets[market].indexPrice}</td>
           <td id={`oracle-${market}`}>{markets[market].oraclePrice}</td>
+          <!-- <td>{markets[market].priceChange24H}</td>
+          <td>{markets[market].volume24H}</td>
+          <td>{markets[market].openInterest}</td> -->
           <td id={`bybit-bid-${market}`}></td>
           <td id={`bybit-bidq-${market}`}></td>
           <td id={`bybit-ask-${market}`}></td>
           <td id={`bybit-askq-${market}`}></td>
+          <!-- <td id={`dydx-orderbook-${market}`}></td>
+          <td id={`binance-orderbook-${market}`}></td> -->
         </tr>
       {/each}
     </tbody>
   </table>
 {/if}
-</body>
+</main>
 
 
 <style>
-*{
-    margin: 0px;
-    padding: 0px;
-    width: 100%;
-}
 h1{
   font-size: 1.4em;
   color : #444444;
@@ -174,15 +249,10 @@ h2{
 .gr{
   color : #999999;
 }
-
-body {
+main{
   width: 100%;
-  background-color: white;  /* Change the background color to white */
+  background: #DDDDDD;
   font-family: 'Nunito Sans';
-  display: flex; 
-  flex-direction: column; 
-  align-items: center; 
-  justify-content: center; 
 }
 thead{
   color : #111111;
@@ -194,9 +264,11 @@ table {
   font-size: 0.68em;
   border-collapse: collapse;
 }
+
 @media (max-width: 600px) {
   table {
     font-size: 0.59em;
   }
 }
+
 </style>
