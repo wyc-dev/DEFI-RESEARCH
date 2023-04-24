@@ -1,6 +1,7 @@
 <script>
 import { fade } from 'svelte/transition';
 import Logo from './l2logo.svelte';
+import Twitter from './twitter.svelte';
 
 let markets = {};
 
@@ -148,6 +149,8 @@ setInterval(updateData, 1000);
     </tbody>
   </table>
 {/if}
+
+<br><a data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a>
 </main>
 
 
