@@ -62,13 +62,12 @@ async function getBybitOrderbook(symbol) {
   return null;
 }
 
-
-
 async function updateData() {
-  const response = await fetch("https://api.dydx.exchange/v3/markets");
-  const data = await response.json();
+  const dydxResponse = await fetch("https://api.dydx.exchange/v3/markets");
+  const dydxData = await dydxResponse.json();
+  const dydxClosePrices = await getDyDxClosePrices();
   const oldMarkets = markets;
-  markets = data.markets;
+  markets = dydxData.markets;
 
   Object.keys(markets).forEach(market => {
     const oldPrice = oldMarkets[market]?.indexPrice;
@@ -95,11 +94,13 @@ async function updateData() {
       }, 1000);
     }
 
-    if (newOracle < document.getElementById(`bybit-bid-${market}`) && document.getElementById(`binance-price-${market}`) < newPrice) 
+    if (newOracle < newPrice && newPrice > document.getElementById(`bybit-ask-${market}`)
+    && document.getElementById(`dydx-close-${market}`) <= document.getElementById(`bybit-bid-${market}`)) 
     {
       signal_cell.style.backgroundColor = "green";
     }
-    else if (newOracle > document.getElementById(`bybit-bid-${market}`) && document.getElementById(`binance-price-${market}`)> newPrice) 
+    else if (newOracle > newPrice && newPrice < document.getElementById(`bybit-bid-${market}`)
+    && document.getElementById(`dydx-close-${market}`) >= document.getElementById(`bybit-ask-${market}`))
     {
       signal_cell.style.backgroundColor = "red";
     }
@@ -108,8 +109,39 @@ async function updateData() {
       signal_cell.style.backgroundColor = "black";
     }
   });
-
 }
+
+  async function getDyDxClosePrices() {
+    const response = await fetch("https://api.dydx.exchange/v3/stats/");
+    const data = await response.json();
+    return data.markets;
+  }
+
+  function updateCellColor(cell, newValue, oldValue) {
+    if (cell && newValue !== oldValue) {
+      cell.style.backgroundColor = newValue > oldValue ? "lightgreen" : "tomato";
+      setTimeout(() => {
+        cell.style.transition = "background-color 1s";
+        cell.style.backgroundColor = "";
+      }, 1000);
+    }
+  }
+
+  async function updateDyDxClosePrices() {
+    const dydxClosePrices = await getDyDxClosePrices();
+
+    Object.keys(dydxClosePrices).forEach((market) => {
+      const dydx_close_cell = document.getElementById(`dydx-close-${market}`);
+      const dydxClosePrice = parseFloat(dydxClosePrices[market].close);
+      const oldDyDxClosePrice = parseFloat(dydx_close_cell.textContent);
+
+      updateCellColor(dydx_close_cell, dydxClosePrice, oldDyDxClosePrice);
+
+      if (dydx_close_cell) {
+        dydx_close_cell.textContent = dydxClosePrice;
+      }
+    });
+  }
 
 async function updateOrderbook() {
   // Update Bybit orderbook data
@@ -153,54 +185,9 @@ async function updateOrderbook() {
   });
 }
 
-
-
-async function getBinancePrice(symbol) {
-  const baseUrl = "https://api.binance.com/api/v3/ticker/price";
-  const params = new URLSearchParams({ symbol });
-
-  try {
-    const response = await fetch(`${baseUrl}?${params.toString()}`);
-    const data = await response.json();
-    if (data && data.price) {
-      return parseFloat(data.price);
-    } else {
-      console.error(`Error fetching price from Binance API: ${JSON.stringify(data)}`);
-    }
-  } catch (error) {
-    console.error(`Error fetching price from Binance API: ${error}`);
-  }
-
-  return null;
-}
-
-async function updateTableWithBinanceData() {
-  Object.keys(markets).forEach(async (market) => {
-    const symbol = market.replace("-", "").replace(" ", "").replace("USD", "USDT");
-    const binancePrice = await getBinancePrice(symbol);
-
-    if (binancePrice !== null) {
-      const binance_price_cell = document.getElementById(`binance-price-${market}`);
-      const oldValue = parseFloat(binance_price_cell.textContent);
-
-      if (binance_price_cell && binancePrice !== oldValue) {
-        binance_price_cell.style.backgroundColor = binancePrice > oldValue ? "lightgreen" : "tomato";
-        setTimeout(() => {
-          binance_price_cell.style.transition = "background-color 1s";
-          binance_price_cell.style.backgroundColor = "";
-        }, 1000);
-      }
-
-      if (binance_price_cell) {
-        binance_price_cell.textContent = binancePrice;
-      }
-    }
-  });
-}
-updateTableWithBinanceData();
 setInterval(updateData, 500);
 setInterval(updateOrderbook, 6000);
-setInterval(updateTableWithBinanceData, 60000);
+setInterval(updateDyDxClosePrices, 1000);
 
 </script>
 
@@ -224,7 +211,7 @@ setInterval(updateTableWithBinanceData, 60000);
     <thead in:fade>
       <tr>
         <th></th>
-        <th>CEX Spot</th>
+        <th>DEX Spot</th>
         <th>DEX Index</th>
         <th>DEX Oracle</th>
         <th>Bid</th>
@@ -237,7 +224,7 @@ setInterval(updateTableWithBinanceData, 60000);
       {#each Object.keys(markets) as market}
         <tr>
           <td class="big" id={`signal-${market}`}>{markets[market].market.replace("-", "").replace(" ", "").replace("USD", "")}</td>
-          <td id={`binance-price-${market}`}></td>
+          <td id={`dydx-close-${market}`}></td>
           <td id={`price-${market}`}>{markets[market].indexPrice}</td>
           <td id={`oracle-${market}`}>{markets[market].oraclePrice}</td>
           <td id={`bybit-bid-${market}`}></td>
