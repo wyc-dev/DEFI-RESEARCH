@@ -190,9 +190,9 @@ async function updateOrderbook() {
       const bybitAsk = parseFloat(document.getElementById(`bybit-ask-${market}`).textContent);
       const bybitBid = parseFloat(document.getElementById(`bybit-bid-${market}`).textContent);
 
-      if (bybitAsk < newOracle && newOracle < newPrice) {
+      if (bybitAsk > newPrice && newOracle < newPrice) {
         signal_cell.style.backgroundColor = "green";
-      } else if (bybitBid > newOracle && newOracle > newPrice) {
+      } else if (bybitBid < newPrice && newOracle > newPrice) {
         signal_cell.style.backgroundColor = "red";
       } else {
         signal_cell.style.backgroundColor = "black";
