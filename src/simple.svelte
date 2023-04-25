@@ -186,6 +186,7 @@ async function updateOrderbook() {
       const signal_cell = document.getElementById(`signal-${market}`);
       const newOracle = parseFloat(markets[market].oraclePrice);
       const newPrice = parseFloat(markets[market].indexPrice);
+      // const spot = parseFloat(document.getElementById(`dydx-close-${market}`).textContent)
       const bybitAsk = parseFloat(document.getElementById(`bybit-ask-${market}`).textContent);
       const bybitBid = parseFloat(document.getElementById(`bybit-bid-${market}`).textContent);
 
