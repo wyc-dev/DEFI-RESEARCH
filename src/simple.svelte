@@ -94,20 +94,23 @@ async function updateData() {
       }, 1000);
     }
 
-    if (newOracle < newPrice && newOracle > document.getElementById(`bybit-bid-${market}`)) 
-    {
-      signal_cell.style.backgroundColor = "green";
-    }
-    if (newOracle > newPrice && newOracle < document.getElementById(`bybit-ask-${market}`))
-    {
-      signal_cell.style.backgroundColor = "red";
-    }
-    else 
-    {
-      signal_cell.style.backgroundColor = "black";
-    }
+
+    // if (newOracle < newPrice) 
+    // {
+    // if (newPrice > document.getElementById(`bybit-ask-${market}`)) 
+    // {signal_cell.style.backgroundColor = "green";}
+    // }
+
+    // if (newOracle > newPrice)
+    // {
+    // if (newPrice < document.getElementById(`bybit-bid-${market}`)) 
+    // {signal_cell.style.backgroundColor = "red";}
+    // }
+
   });
 }
+
+
 
   async function getDyDxClosePrices() {
     const response = await fetch("https://api.dydx.exchange/v3/stats/");
@@ -178,6 +181,20 @@ async function updateOrderbook() {
       }
       if (bybit_askq_cell) {
         bybit_askq_cell.textContent = orderbook.a[1];
+      }
+      
+      const signal_cell = document.getElementById(`signal-${market}`);
+      const newOracle = parseFloat(markets[market].oraclePrice);
+      const newPrice = parseFloat(markets[market].indexPrice);
+      const bybitAsk = parseFloat(document.getElementById(`bybit-ask-${market}`).textContent);
+      const bybitBid = parseFloat(document.getElementById(`bybit-bid-${market}`).textContent);
+
+      if (bybitAsk < newOracle < newPrice) {
+        signal_cell.style.backgroundColor = "green";
+      } else if (bybitBid > newOracle > newPrice) {
+        signal_cell.style.backgroundColor = "red";
+      } else {
+        signal_cell.style.backgroundColor = "black";
       }
     }
   });
