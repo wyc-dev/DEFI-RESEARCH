@@ -94,13 +94,11 @@ async function updateData() {
       }, 1000);
     }
 
-    if (newOracle < newPrice && newPrice > document.getElementById(`bybit-ask-${market}`)
-    && document.getElementById(`dydx-close-${market}`) <= document.getElementById(`bybit-bid-${market}`)) 
+    if (newOracle < newPrice && newPrice > document.getElementById(`bybit-ask-${market}`)) 
     {
       signal_cell.style.backgroundColor = "green";
     }
-    else if (newOracle > newPrice && newPrice < document.getElementById(`bybit-bid-${market}`)
-    && document.getElementById(`dydx-close-${market}`) >= document.getElementById(`bybit-ask-${market}`))
+    else if (newOracle > newPrice && newPrice < document.getElementById(`bybit-bid-${market}`))
     {
       signal_cell.style.backgroundColor = "red";
     }
