@@ -145,8 +145,10 @@ async function updateData() {
   }
 
 async function updateOrderbook() {
+  
   // Update Bybit orderbook data
   Object.keys(markets).forEach(async (market) => {
+
     const symbol = market.replace("-", "").replace(" ", "").replace("USD", "USDT");
     const orderbook = await getBybitOrderbook(symbol);
     if (orderbook) {
