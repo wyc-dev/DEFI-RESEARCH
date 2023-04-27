@@ -186,13 +186,13 @@ async function updateOrderbook() {
       const signal_cell = document.getElementById(`signal-${market}`);
       const newOracle = parseFloat(markets[market].oraclePrice);
       const newPrice = parseFloat(markets[market].indexPrice);
-      // const spot = parseFloat(document.getElementById(`dydx-close-${market}`).textContent)
+      const spot = parseFloat(document.getElementById(`dydx-close-${market}`).textContent)
       const bybitAsk = parseFloat(document.getElementById(`bybit-ask-${market}`).textContent);
       const bybitBid = parseFloat(document.getElementById(`bybit-bid-${market}`).textContent);
 
-      if (bybitAsk > newPrice && newOracle < newPrice) {
+      if (bybitAsk > newPrice && newOracle < newPrice && newOracle > spot) {
         signal_cell.style.backgroundColor = "green";
-      } else if (bybitBid < newPrice && newOracle > newPrice) {
+      } else if (bybitBid < newPrice && newOracle > newPrice && newOracle < spot) {
         signal_cell.style.backgroundColor = "red";
       } else {
         signal_cell.style.backgroundColor = "black";
