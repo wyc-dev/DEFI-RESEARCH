@@ -10,6 +10,7 @@ import Bot from './assets/robot_pic.svelte';
 import Table from './assets/table.svelte';
 import Defi from './assets/defi.svelte';
 import Bybit from './assets/bybit_logo.svelte';
+import Graph from './assets/graph.svelte';
 import Back from './assets/background.svelte';
 
 let page = 1;
@@ -52,7 +53,7 @@ function navigateToLinkedin() {
 
 <div class="flash"><Logo/></div>
 
-<h2>Bybit x L2G0</h2>
+<h2>Bybit x "L2G0"</h2>
 <h5>Layer 2 research market making Grid bot 0</h5>
 
 <div class="center"><Bot/></div>
@@ -89,7 +90,14 @@ function navigateToLinkedin() {
 
 <br>
 
-<div class="center"><p>We offers real-time analysis of cryptocurrency trends, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources.</p></div> <br><br>
+<div class="center"><p>We offers real-time analysis of cryptocurrency trends, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources.</p></div>
+
+<div class="center"><Graph/></div>
+
+
+<div class="center"><p>With years of meticulous research, extensive backtesting, and rigorous real-world testing, our robot utilizes sophisticated Market Making and Market Neutral Strategies commonly employed by hedge funds. "L2G0" designed to offer remarkable stability, has consistently delivered monthly returns ranging from 2% to 13%. We are confident that our product will revolutionize your trading experience, providing you with unparalleled advantages in the dynamic world of digital assets.</p></div>
+
+<br><br>
 
 <div class="center"><button on:click={()=>{navigateToLinkedin();}}>Follow us on <Linkedin_words/></button></div>
 
