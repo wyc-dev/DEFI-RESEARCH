@@ -24,7 +24,9 @@ const schema = {
 }
 };
 
-
+function navigateToBybit() {
+  window.location.href = 'https://i.bybit.com/2Babhadz';
+}
 </script>
 
 
@@ -40,9 +42,7 @@ const schema = {
   <meta name="description" content="L2 Research provides real-time cryptocurrency trend analysis with decentralized and centralized data. Stay updated with the latest market trends and make informed decisions.">
 </head>
 
-<div class="body">
-  <Back/>
-</div>
+
 
 
 <div class="flash"><Logo/></div>
@@ -52,7 +52,7 @@ const schema = {
 <p>We are a company specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends in the cryptocurrency market and conducting practical studies through trading on various exchanges. L2 Research aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
 
 <br>
-<button data-sveltekit-reload href="https://i.bybit.com/2Babhadz"><p>Trade with us on</p> <Bybit/></button>
+<div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div>
 
 <br>
 <br>
@@ -75,8 +75,18 @@ const schema = {
   animation: flashing 4s infinite;
   filter: drop-shadow(1 1 3em #ffffff);
 }
+.center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 button{
-  max-width: 300px;
+  display: flex;
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Horizontally center the content */
+  gap: 9px;
+  font-size: 0.8em;
+  max-width: 290px;
   min-width: 200px;
 }
 .body {
