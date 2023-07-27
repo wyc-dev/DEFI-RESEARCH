@@ -234,10 +234,13 @@
   }
 
   .big {
+    color: white;
     padding: 3px;
     font-size: 1.1em;
   }
-
+  thead{
+    color: #06cca9;
+  }
 
   table {
     color : #aaaaaa;

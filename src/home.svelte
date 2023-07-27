@@ -63,8 +63,7 @@ function navigateToBybit() {
 
 
 
-<div class="centerc"><Bot/>
-</div>
+<div class="center"><Bot/></div>
 
 
 
@@ -74,7 +73,7 @@ function navigateToBybit() {
 
 <br><br>
 
-
+<div class="center"><p>We offers real-time analysis of cryptocurrency trends, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources.</p></div> <br><br>
 
 <div class="center"><Table/></div>
 
