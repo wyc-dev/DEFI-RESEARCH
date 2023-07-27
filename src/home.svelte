@@ -53,7 +53,7 @@ function navigateToBybit() {
 
 <div class="flash"><Logo/></div>
 
-<h2>L2G0</h2>
+<h2>Bybit x L2G0</h2>
 <h5>Layer 2 research market making Grid bot 0</h5>
 
 <div class="center">
@@ -70,11 +70,11 @@ function navigateToBybit() {
 <br>
 <div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div>
 
-<br><br>
+<br><br><h2>L2 DeFi Research</h2>
 
 <div class="center"><p>We offers real-time analysis of cryptocurrency trends, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources.</p></div> <br><br>
 
-<!-- <div class="center"><Table/></div> -->
+<div class="center"><Table/></div>
 
 
 <br><br>
