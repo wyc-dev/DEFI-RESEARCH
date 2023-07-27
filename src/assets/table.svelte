@@ -244,8 +244,7 @@
     /* position: fixed; */
     /* top: 360px; */
     /* left: -1%; */
-    font-size: 0.1em;
-    width: 50vw;
+    width: 50%;
     margin: auto;
     font-size: 0.8em;
     border-collapse: collapse;
