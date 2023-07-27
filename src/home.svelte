@@ -12,6 +12,8 @@ import Defi from './assets/defi.svelte';
 import Bybit from './assets/bybit_logo.svelte';
 import Graph from './assets/graph.svelte';
 import Back from './assets/background.svelte';
+import Team from './assets/teamwork.svelte';
+
 
 let page = 1;
 const schema = {
@@ -94,10 +96,13 @@ function navigateToLinkedin() {
 
 <div class="center"><Graph/></div>
 
-
 <div class="center"><p>With years of meticulous research, extensive backtesting, and rigorous real-world testing, our robot utilizes sophisticated Market Making and Market Neutral Strategies commonly employed by hedge funds. "L2G0" designed to offer remarkable stability, has consistently delivered monthly returns ranging from 2% to 13%. We are confident that our product will revolutionize your trading experience, providing you with unparalleled advantages in the dynamic world of digital assets.</p></div>
 
-<br><br>
+<div class="center"><Team/></div>
+
+<div class="center"><p>With a shared passion for technology, finance, and innovation, our team is a perfect fusion of expertise and talent. Our developers bring years of experience in creating sophisticated trading algorithms, ensuring that our Automated Cryptocurrency Trading Robot remains at the forefront of technological advancements.</p></div>
+
+<br><br><br>
 
 <div class="center"><button on:click={()=>{navigateToLinkedin();}}>Follow us on <Linkedin_words/></button></div>
 
