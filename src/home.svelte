@@ -102,7 +102,7 @@ button{
   min-width: 200px;
 }
 p{
-  max-width: 440px;
+  max-width: 60vw;
   min-width: 200px;
 }
 .body {
