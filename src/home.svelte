@@ -5,6 +5,8 @@ import Logo from './assets/logo.svelte';
 import Twitter from './assets/twitter_logo.svelte';
 import Linkedin from './assets/linkedin_logo.svelte';
 import Telegram from './assets/telegram_logo.svelte';
+import Bot from './assets/robot_pic.svelte';
+
 import Bybit from './assets/bybit_logo.svelte';
 import Back from './assets/background.svelte';
 
@@ -52,8 +54,15 @@ function navigateToBybit() {
 <h2>L2 Research</h2>
 
 <p>We are a company specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends in the cryptocurrency market and conducting practical studies through trading on various exchanges. L2 Research aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
-
 <br>
+
+
+<Bot/>
+
+
+
+
+<br><br>
 <div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div>
 
 <br>
