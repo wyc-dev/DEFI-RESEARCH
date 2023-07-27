@@ -125,6 +125,7 @@ button{
   max-width: 290px;
   min-width: 200px;
   height: 45px;
+  border: 1px solid #06cca9;
 }
 p{
   max-width: 60vw;
