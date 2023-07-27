@@ -106,7 +106,7 @@ function navigateToLinkedin() {
 
 <div class="center"><button on:click={()=>{navigateToLinkedin();}}>Follow us on <Linkedin_words/></button></div>
 
-<br><br>
+<br><br><br>
 
 <div class="center"><Table/></div>
 
