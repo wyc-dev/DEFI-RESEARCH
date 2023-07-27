@@ -9,13 +9,10 @@ import Telegram from './assets/telegram_logo.svelte';
 import Bot from './assets/robot_pic.svelte';
 import Table from './assets/table.svelte';
 import Defi from './assets/defi.svelte';
-
-
-
 import Bybit from './assets/bybit_logo.svelte';
 import Back from './assets/background.svelte';
 
-
+let page = 1;
 const schema = {
 "@context": "https://schema.org",
 "@type": "WebSite",
@@ -51,7 +48,7 @@ function navigateToLinkedin() {
 </head>
 
 
-
+{#if page === 1}
 
 <div class="flash"><Logo/></div>
 
@@ -60,9 +57,26 @@ function navigateToLinkedin() {
 
 <div class="center"><Bot/></div>
 
-<div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div>
+<div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div><br>
+<div class="center"><button on:click={()=>{page = 2;}}>More about L2 Research</button></div>
 
 <br><br>
+
+<div>
+<a  class="bor" data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a>
+<a  class="bor" data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
+<a  class="bor" data-sveltekit-reload href="https://t.me/l2research"><Telegram/></a>
+<br>
+</div> 
+
+<br>
+
+<p>L2 Research © founded by <a class="bor" data-sveltekit-reload href="https://www.linkedin.com/in/y-c-wong/">YC</a> as a side project in 2020</p>
+
+{:else}
+<br><br>
+
+<h2>L2 DeFi Research</h2>
 
 <div class="center"><p>"L2 Research" specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends with AI in the cryptocurrency market and conducting practical studies through trading on various exchanges. We aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
 </div>
@@ -73,18 +87,19 @@ function navigateToLinkedin() {
 
 <br>
 
-<h2>L2 DeFi Research</h2>
-
 <br>
 
 <div class="center"><p>We offers real-time analysis of cryptocurrency trends, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources.</p></div> <br><br>
 
 <div class="center"><button on:click={()=>{navigateToLinkedin();}}>Follow us on <Linkedin_words/></button></div>
 
-<br><br><br>
+<br><br>
 
 <div class="center"><Table/></div>
 
+
+<br><br>
+<div class="center"><button on:click={()=>{page = 1;}}>Back to "L2G0" page</button></div>
 
 <br><br>
 
@@ -93,10 +108,10 @@ function navigateToLinkedin() {
 <a  class="bor" data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
 <a  class="bor" data-sveltekit-reload href="https://t.me/l2research"><Telegram/></a>
 <br>
-</div> <br> 
+</div> <br>
 
 <h4>🖤 WAGMI ♠️</h4> 
-
+{/if}
 
 </html>
 
