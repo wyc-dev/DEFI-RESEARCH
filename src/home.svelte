@@ -108,7 +108,7 @@ function navigateToBybit() {
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  filter: drop-shadow(0 0 1em #ffffff44);
+  filter: drop-shadow(0 0 1em #ffffff33);
 }
 button{
   display: flex;
