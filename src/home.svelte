@@ -64,7 +64,7 @@ function navigateToLinkedin() {
 
 <br><br>
 
-<div class="center"><p>We are a company specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends with AI in the cryptocurrency market and conducting practical studies through trading on various exchanges. L2 Research aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
+<div class="center"><p>"L2 Research" specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends with AI in the cryptocurrency market and conducting practical studies through trading on various exchanges. We aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
 </div>
 
 <br>
@@ -81,7 +81,7 @@ function navigateToLinkedin() {
 
 <div class="center"><button on:click={()=>{navigateToLinkedin();}}>Follow us on <Linkedin_words/></button></div>
 
-<br><br>
+<br><br><br>
 
 <div class="center"><Table/></div>
 
@@ -113,7 +113,7 @@ function navigateToLinkedin() {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 100%;
+  max-width: 420px;
   filter: drop-shadow(0 0 1em #ffffff33);
 }
 button{
