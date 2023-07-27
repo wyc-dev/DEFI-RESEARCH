@@ -76,8 +76,11 @@ function navigateToLinkedin() {
 
 <div class="center"><p>L2 Research © founded by <a class="bor" data-sveltekit-reload href="https://www.linkedin.com/in/y-c-wong/">YC</a> as a side project in 2020</p></div>
 
-{:else}
 <br><br>
+
+{:else}
+
+<br>
 
 <h2>L2 DeFi Research</h2>
 
