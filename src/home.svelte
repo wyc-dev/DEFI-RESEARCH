@@ -89,6 +89,10 @@ button{
   max-width: 290px;
   min-width: 200px;
 }
+p{
+  max-width: 440px;
+  min-width: 200px;
+}
 .body {
   opacity: 0.4;
   position: fixed;

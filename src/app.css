@@ -81,15 +81,15 @@ button {
   font-weight: 500;
   font-family: 'Nunito Sans';
   color: rgba(256, 256, 256, 0.8);
-  background-color: #333333;
+  background-color: #000000;
   cursor: pointer;
   transition: background-color 0.25s;
   animation: button 4s infinite; 
 }
 button:hover {
   color: rgba(0, 0, 0, 0.9);
-  background-color: rgba(256, 256, 256, 0.8);
-  filter: drop-shadow(0 0 1em #FFFFFF44);
+  background-color: rgba(256, 256, 256, 0.4);
+  filter: drop-shadow(0 0 1em #FFFFFF);
   border: 1px solid #FFFFFF;
 }
 button:focus,
@@ -106,13 +106,13 @@ button:focus-visible {
 
 @keyframes button {
   0% {
-    border: 1px solid rgba(256, 256, 256, 0.1);
+    border: 1px solid rgba(256, 256, 256, 0.41);
   }
   30% {
     border: 1px solid #FFFFFF;
   }
   100% {
-    border: 1px solid rgba(256, 256, 256, 0.1);
+    border: 1px solid rgba(256, 256, 256, 0.41);
   }
 }
 
