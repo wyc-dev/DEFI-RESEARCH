@@ -43,6 +43,11 @@ h4 {
   will-change: filter;
   transition: filter 300ms;
 }
+h5 {
+  color: rgba(256, 256, 256, 0.8);
+  will-change: filter;
+  transition: filter 300ms;
+}
 h3:hover {
   filter: drop-shadow(0 0 1em #FFFFFF);
 }
