@@ -159,4 +159,6 @@ img{
   z-index: 9999;
   filter: drop-shadow(0 0 4em #444444);
 }
+html{
+}
 </style>
