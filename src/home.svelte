@@ -63,7 +63,7 @@ function navigateToBybit() {
 <br>
 
 
-<div class="center"><img src="./assets/robot.jpg"/>
+<div class="center"><img src="https://i.ibb.co/Fq7q3bF/robot.png" alt="robot"/>
 </div>
 
 
@@ -119,6 +119,9 @@ button{
 p{
   max-width: 60vw;
   min-width: 200px;
+}
+img{
+  width:100%;
 }
 .body {
   opacity: 0.4;
