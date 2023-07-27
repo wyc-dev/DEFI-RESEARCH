@@ -51,7 +51,8 @@ function navigateToBybit() {
 
 <div class="flash"><Logo/></div>
 
-<h2>L2 Research</h2>
+<h2>L2G0</h2>
+<h5>Layer 2 research market making Grid bot 0</h5>
 
 <div class="center">
 <p>We are a company specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends with AI in the cryptocurrency market and conducting practical studies through trading on various exchanges. L2 Research aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>

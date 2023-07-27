@@ -21,7 +21,11 @@ p {
   transition: filter 300ms;
 }
 p:hover {
-  color: rgba(256, 256, 256, 0.8);
+  color: rgba(256, 256, 256, 0.68);
+  filter: drop-shadow(0 0 1em #FFFFFFaa);
+}
+h5:hover {
+  color: rgba(256, 256, 256);
   filter: drop-shadow(0 0 1em #FFFFFF);
 }
 h2 {
