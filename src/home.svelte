@@ -4,9 +4,12 @@ import { fade } from 'svelte/transition';
 import Logo from './assets/logo.svelte';
 import Twitter from './assets/twitter_logo.svelte';
 import Linkedin from './assets/linkedin_logo.svelte';
+import Bybit from './assets/bybit_logo.svelte';
 import Back from './assets/background.svelte';
 
-
+function to_bybit_page() {
+  window.location.href = "https://i.bybit.com/2Babhadz";
+}
 
 const schema = {
 "@context": "https://schema.org",
@@ -33,7 +36,7 @@ const schema = {
 
 
 
-<html in:fade>
+<html lang="ts" in:fade>
 
 <head>
   <title>L2 Research</title>
@@ -51,6 +54,10 @@ const schema = {
 
 <p>We are a company specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends in the cryptocurrency market and conducting practical studies through trading on various exchanges. L2 Research aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
 
+<br>
+<button on:click={to_bybit_page}}><p>Trade with us on</p> <Bybit/></button>
+
+<br>
 <br>
 
 <div>
@@ -79,6 +86,6 @@ const schema = {
   width: 100vw;
   height: 100vh;
   z-index: 9999;
-  filter: drop-shadow(0 0 4em #0063be);
+  filter: drop-shadow(0 0 4em #444444);
 }
 </style>

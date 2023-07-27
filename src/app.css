@@ -81,7 +81,7 @@ button {
   font-weight: 500;
   font-family: 'Nunito Sans';
   color: rgba(256, 256, 256, 0.8);
-  background-color: rgba(94, 28, 236, 0.1);
+  background-color: #333333;
   cursor: pointer;
   transition: background-color 0.25s;
   animation: button 4s infinite; 
