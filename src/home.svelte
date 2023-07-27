@@ -4,6 +4,7 @@ import { fade } from 'svelte/transition';
 import Logo from './assets/logo.svelte';
 import Twitter from './assets/twitter_logo.svelte';
 import Linkedin from './assets/linkedin_logo.svelte';
+import Linkedin_words from './assets/linkedin.svelte';
 import Telegram from './assets/telegram_logo.svelte';
 import Bot from './assets/robot_pic.svelte';
 import Table from './assets/table.svelte';
@@ -33,14 +34,15 @@ const schema = {
 
 function navigateToBybit() {
   window.location.href = "https://i.bybit.com/1LOab1mc?action=inviteToCopy";
-  // 'https://i.bybit.com/2Babhadz';
+}
+
+function navigateToLinkedin() {
+  window.location.href = "https://www.linkedin.com/company/91319068/";
 }
 </script>
 
 
-
-
-
+https://www.linkedin.com/company/91319068/
 
 
 <html lang="ts" in:fade>
@@ -76,6 +78,9 @@ function navigateToBybit() {
 <h2>L2 DeFi Research</h2>
 
 <div class="center"><p>We offers real-time analysis of cryptocurrency trends, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources.</p></div> <br><br>
+
+<div class="center"><button on:click={()=>{navigateToLinkedin();}}>Follow us on <Linkedin_words/></button></div>
+
 
 <div class="center"><Table/></div>
 
@@ -118,6 +123,7 @@ button{
   font-size: 0.8em;
   max-width: 290px;
   min-width: 200px;
+  height: 45px;
 }
 p{
   max-width: 60vw;
