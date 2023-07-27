@@ -60,16 +60,16 @@ function navigateToBybit() {
 <p>We are a company specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends with AI in the cryptocurrency market and conducting practical studies through trading on various exchanges. L2 Research aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
 </div>
 
-<br>
 
 
-<div class="center"><img src="https://i.ibb.co/HBf5h17/New-Project.png" alt="robot"/>
+
+<div class="centerc"><Bot/>
 </div>
 
 
 
 
-<br><br>
+<br>
 <div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div>
 
 <br><br>
@@ -106,6 +106,7 @@ function navigateToBybit() {
   display: flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
 }
 button{
   display: flex;
