@@ -63,9 +63,8 @@ function navigateToBybit() {
 
 
 
-<div class="center"><Bot/></div>
-
-
+<div class="center"><img src="https://i.ibb.co/VtMY8Xm/New-Project-1.png" alt="robot" />
+</div>
 
 
 <br>
@@ -121,7 +120,7 @@ p{
   min-width: 200px;
 }
 img{
-  width:100%;
+  width:68%;
 }
 .body {
   opacity: 0.4;
