@@ -209,7 +209,6 @@ setInterval(updateDyDxClosePrices, 1000);
 
 </script>
 
-<html class="bordered">
 
 <main in:fade>
 
@@ -261,10 +260,8 @@ setInterval(updateDyDxClosePrices, 1000);
 <br>
 </div> <br> <h2>🖤 WAGMI ♠️</h2> 
 
-<amp-auto-ads type="adsense"
-        data-ad-client="ca-pub-1031236648197201">
-</amp-auto-ads>
-</main> </html>
+
+</main>
 
 
 <style>
@@ -293,7 +290,6 @@ h2{
   color : #444444;
 }
 html{
-  padding: 6px;
   left: 50%;
   right:50%;
   background: black;
@@ -301,7 +297,7 @@ html{
 main{
   width: 100%;
   min-height:100vh;
-  background: #DDDDDD;
+  background: #000000;
   font-family: 'Nunito Sans';
   border-radius: 90px;
 }
@@ -344,7 +340,6 @@ table {
   }
 }
 .bordered {
-  border: 3px solid;
   animation: colorChange 0.5s infinite alternate;
 }
 
