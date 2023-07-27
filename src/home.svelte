@@ -52,7 +52,7 @@ const schema = {
 <p>We are a company specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends in the cryptocurrency market and conducting practical studies through trading on various exchanges. L2 Research aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
 
 <br>
-<a data-sveltekit-reload href="https://i.bybit.com/2Babhadz"><button><p>Trade with us on</p> <Bybit/></button></a>
+<button data-sveltekit-reload href="https://i.bybit.com/2Babhadz"><p>Trade with us on</p> <Bybit/></button>
 
 <br>
 <br>
