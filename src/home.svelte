@@ -4,6 +4,8 @@ import { fade } from 'svelte/transition';
 import Logo from './assets/logo.svelte';
 import Twitter from './assets/twitter_logo.svelte';
 import Linkedin from './assets/linkedin_logo.svelte';
+import Back from './assets/background.svelte';
+
 
 
 const schema = {
@@ -38,6 +40,11 @@ const schema = {
   <meta name="description" content="L2 Research provides real-time cryptocurrency trend analysis with decentralized and centralized data. Stay updated with the latest market trends and make informed decisions.">
 </head>
 
+<div class="body">
+  <Back/>
+</div>
+
+
 <div class="flash"><Logo/></div>
 
 <h2>L2 Research</h2>
@@ -46,8 +53,9 @@ const schema = {
 
 <br>
 
-<div><a data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a>
-<a data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
+<div>
+<a  class="bor" data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a>
+<a  class="bor" data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
 <br>
 </div> <br> <h4>🖤 WAGMI ♠️</h4> 
 
@@ -56,8 +64,21 @@ const schema = {
 
 
 <style>
+.bor{
+  margin : 4px;
+}
 .flash{
   animation: flashing 4s infinite;
   filter: drop-shadow(1 1 3em #ffffff);
+}
+.body {
+  opacity: 0.4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+  filter: drop-shadow(0 0 4em #0063be);
 }
 </style>

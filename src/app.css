@@ -15,14 +15,14 @@
 }
 
 p {
-  color: rgba(256, 256, 256, 0.3);
+  color: rgba(256, 256, 256, 0.41);
   font-size: 0.68em;
   will-change: filter;
   transition: filter 300ms;
 }
 p:hover {
   color: rgba(256, 256, 256, 0.8);
-  filter: drop-shadow(0 0 1em #5E1CEC);
+  filter: drop-shadow(0 0 1em #FFFFFF);
 }
 
 h3 {
@@ -31,7 +31,7 @@ h3 {
   transition: filter 300ms;
 }
 h3:hover {
-  filter: drop-shadow(0 0 1em #5E1CEC);
+  filter: drop-shadow(0 0 1em #FFFFFF);
 }
 
 main{
@@ -89,8 +89,8 @@ button {
 button:hover {
   color: rgba(0, 0, 0, 0.9);
   background-color: rgba(256, 256, 256, 0.8);
-  filter: drop-shadow(0 0 1em #5E1CECaa);
-  border: 1px solid #5E1CEC;
+  filter: drop-shadow(0 0 1em #FFFFFFaa);
+  border: 1px solid #FFFFFF;
 }
 button:focus,
 button:focus-visible {
@@ -109,7 +109,7 @@ button:focus-visible {
     border: 1px solid rgba(256, 256, 256, 0.1);
   }
   30% {
-    border: 1px solid #5E1CEC;
+    border: 1px solid #FFFFFF;
   }
   100% {
     border: 1px solid rgba(256, 256, 256, 0.1);
@@ -142,7 +142,7 @@ button:focus-visible {
   position: absolute;
   border: 6px solid rgba(94, 28, 236, 0.3);
   border-top: 6px solid rgba(94, 28, 236);
-  filter: drop-shadow(0 0 0.5em #5E1CEC);
+  filter: drop-shadow(0 0 0.5em #FFFFFF);
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -195,13 +195,13 @@ button:focus-visible {
 
 @keyframes confirmed {
   0% {
-    color: #5E1CEC;
+    color: #FFFFFF;
   }
   50% {
     color: green;
   }
   100% {
-    color: #5E1CEC; 
+    color: #FFFFFF; 
   }
 }
 
@@ -210,13 +210,13 @@ button:focus-visible {
     color: red;
   }
   25%{
-    color: #5E1CEC;
+    color: #FFFFFF;
   }
   50% {
     color: red;
   }
   75%{
-    color: #5E1CEC;
+    color: #FFFFFF;
   }
   100% {
     color: red; 
