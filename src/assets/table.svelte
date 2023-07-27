@@ -1,27 +1,6 @@
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1031236648197201"
-     crossorigin="anonymous">
+<script>
 
 import { fade } from 'svelte/transition';
-import Logo from './l2logo.svelte';
-import Twitter from './twitter.svelte';
-import Linkedin from './linkedin.svelte';
-
-
-const schema = {
-"@context": "https://schema.org",
-"@type": "WebSite",
-"name": "L2 Research",
-"url": "https://l2-research.vercel.app/",
-"description": "Real-time cryptocurrency trend analysis with decentralized and centralized data.",
-"publisher": {
-"@type": "Organization",
-"name": "L2 Research",
-"logo": {
-"@type": "ImageObject",
-"url": "https://i.ibb.co/k0MG7Xs/L2R.png" 
-}
-}
-};
 
 const script = document.createElement('script');
 script.setAttribute('type', 'application/ld+json');
@@ -93,20 +72,6 @@ async function updateData() {
         oracle_cell.style.backgroundColor = "";
       }, 1000);
     }
-
-
-    // if (newOracle < newPrice) 
-    // {
-    // if (newPrice > document.getElementById(`bybit-ask-${market}`)) 
-    // {signal_cell.style.backgroundColor = "green";}
-    // }
-
-    // if (newOracle > newPrice)
-    // {
-    // if (newPrice < document.getElementById(`bybit-bid-${market}`)) 
-    // {signal_cell.style.backgroundColor = "red";}
-    // }
-
   });
 }
 
@@ -210,19 +175,6 @@ setInterval(updateDyDxClosePrices, 1000);
 </script>
 
 
-<main in:fade>
-
-<head>
-  <title>L2 Research - Real-time Cryptocurrency Trend Analysis with DeFi x CeFi data</title>
-  <meta name="description" content="L2 Research provides real-time cryptocurrency trend analysis with decentralized and centralized data. Stay updated with the latest market trends and make informed decisions.">
-</head>
-
-<br><Logo/><br><br>
-<h1>L2 Research</h1>
-<h2>real-time cryptocurrency trend analysis</h2>
-<h2>with decentralized and centralized data</h2>
-<br>
-
 {#if Object.keys(markets).length > 0}
   <table>
     <thead in:fade>
@@ -253,99 +205,3 @@ setInterval(updateDyDxClosePrices, 1000);
     </tbody>
   </table>
 {/if}
-
-<br>
-<div><a data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a>
-<a data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
-<br>
-</div> <br> <h2>🖤 WAGMI ♠️</h2> 
-
-
-</main>
-
-
-<style>
-*{
-  font-family: 'Nunito Sans';
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-}
-.big{
-  font-size: 1.1em;
-  color : white;
-}
-a{
-  margin:9px;
-}
-h1{
-  font-size: 1.4em;
-  color : #aaaaaa;
-}
-h2{
-  font-size: 1em;
-  color : #aaaaaa;
-}
-html{
-  left: 50%;
-  right:50%;
-  background: black;
-}
-main{
-  width: 100%;
-  min-height:100vh;
-  background: #000000;
-  font-family: 'Nunito Sans';
-  border-radius: 90px;
-}
-thead{
-  color : black;
-}
-table {
-  color : #444444;
-  width: 100%;
-  margin: auto;
-  font-size: 0.8em;
-  border-collapse: collapse;
-}
-@media (max-width: 610px) {
-  h1{
-    font-size: 1.1em;
-  }
-  h2{
-    font-size: 0.8em;
-  }
-  thead{
-    font-size: 1em;
-  }
-  table {
-    font-size: 0.59em;
-  }
-}
-@media (max-width: 390px) {
-  h1{
-    font-size: 0.86em;
-  }
-  h2{
-    font-size: 0.6em;
-  }
-  thead{
-    font-size: 1em;
-  }
-  table {
-    font-size: 0.41em;
-  }
-}
-.bordered {
-  animation: colorChange 0.5s infinite alternate;
-}
-
-@keyframes colorChange {
-  0% {
-    border-color: red;
-  }
-  100% {
-    border-color: green;
-  }
-}
-</style>
