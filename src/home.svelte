@@ -63,7 +63,7 @@ function navigateToBybit() {
 <br>
 
 
-<!-- <div class="center"><Bot/></div> -->
+<div class="center"><Bot/></div>
 
 
 
@@ -75,7 +75,7 @@ function navigateToBybit() {
 
 
 
-<!-- <div class="center"><Table/></div> -->
+<div class="center"><Table/></div>
 
 
 <br><br>
@@ -85,7 +85,9 @@ function navigateToBybit() {
 <a  class="bor" data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
 <a  class="bor" data-sveltekit-reload href="https://t.me/l2research"><Telegram/></a>
 <br>
-</div> <br> <h4>🖤 WAGMI ♠️</h4> 
+</div> <br> 
+
+<h4>🖤 WAGMI ♠️</h4> 
 
 
 </html>
