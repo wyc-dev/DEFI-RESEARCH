@@ -120,7 +120,7 @@ p{
   min-width: 200px;
 }
 img{
-  width:68%;
+  width:86%;
 }
 .body {
   opacity: 0.4;
