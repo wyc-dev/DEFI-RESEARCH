@@ -63,7 +63,7 @@ function navigateToBybit() {
 <br>
 
 
-<div class="center"><img src="./assets/robot.png"/>
+<div class="center"><img src="./assets/robot.jpg"/>
 </div>
 
 
