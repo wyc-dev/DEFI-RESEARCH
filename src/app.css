@@ -186,7 +186,7 @@ button:focus-visible {
     opacity: 1;
   }
   50% {
-    opacity: 0.86;
+    opacity: 0.68;
   }
   100% {
     opacity: 1;
@@ -223,12 +223,12 @@ button:focus-visible {
   }
 }
 
-@keyframes flashing_pur {
+@keyframes flash_logo {
   0% {
-    opacity:0;
+    opacity:0.68;
   }
   25% {
-    opacity:0;
+    opacity:0.86;
   }
   45% {
     opacity: 1;
@@ -240,10 +240,10 @@ button:focus-visible {
     opacity: 1;
   }
   75% {
-    opacity:0;
+    opacity:0.86;
   }
   100% {
-    opacity: 0;
+    opacity: 0.68;
   }
 
 }
