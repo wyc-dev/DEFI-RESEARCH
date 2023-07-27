@@ -266,15 +266,12 @@ setInterval(updateDyDxClosePrices, 1000);
 
 <style>
 *{
-  padding:0px;
-  margin:0px;
   font-family: 'Nunito Sans';
   flex-direction: column;
   text-align: center;
   justify-content: center;
 }
 .big{
-  padding: 3px;
   font-size: 1.1em;
   color : white;
 }
