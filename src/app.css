@@ -106,7 +106,7 @@ button {
 }
 button:hover {
   color: rgba(0, 0, 0, 0.9);
-  background-color: rgba(256, 256, 256, 0.4);
+  background-color: #06cca9;
   filter: drop-shadow(0 0 1em #FFFFFF);
   border: 1px solid #FFFFFF;
 }

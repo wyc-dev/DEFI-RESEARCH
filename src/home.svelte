@@ -107,7 +107,7 @@ function navigateToLinkedin() {
 }
 .flash{
   animation: flashing 4s infinite;
-  filter: drop-shadow(1 1 3em #ffffff);
+  filter: drop-shadow(0 0 3em #06cca9);
 }
 .center{
   display: flex;
