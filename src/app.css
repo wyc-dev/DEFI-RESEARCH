@@ -24,8 +24,17 @@ p:hover {
   color: rgba(256, 256, 256, 0.8);
   filter: drop-shadow(0 0 1em #FFFFFF);
 }
-
+h2 {
+  color: rgba(256, 256, 256, 0.8);
+  will-change: filter;
+  transition: filter 300ms;
+}
 h3 {
+  color: rgba(256, 256, 256, 0.8);
+  will-change: filter;
+  transition: filter 300ms;
+}
+h4 {
   color: rgba(256, 256, 256, 0.8);
   will-change: filter;
   transition: filter 300ms;
