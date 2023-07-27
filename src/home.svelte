@@ -4,6 +4,7 @@ import { fade } from 'svelte/transition';
 import Logo from './assets/logo.svelte';
 import Twitter from './assets/twitter_logo.svelte';
 import Linkedin from './assets/linkedin_logo.svelte';
+import Telegram from './assets/telegram_logo.svelte';
 import Bybit from './assets/bybit_logo.svelte';
 import Back from './assets/background.svelte';
 
@@ -60,6 +61,7 @@ function navigateToBybit() {
 <div>
 <a  class="bor" data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a>
 <a  class="bor" data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
+<a  class="bor" data-sveltekit-reload href="https://t.me/l2research"><Telegram/></a>
 <br>
 </div> <br> <h4>🖤 WAGMI ♠️</h4> 
 
