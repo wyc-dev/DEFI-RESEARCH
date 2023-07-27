@@ -283,11 +283,11 @@ a{
 }
 h1{
   font-size: 1.4em;
-  color : #444444;
+  color : #aaaaaa;
 }
 h2{
   font-size: 1em;
-  color : #444444;
+  color : #aaaaaa;
 }
 html{
   left: 50%;
