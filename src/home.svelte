@@ -7,6 +7,8 @@ import Linkedin from './assets/linkedin_logo.svelte';
 import Telegram from './assets/telegram_logo.svelte';
 import Bot from './assets/robot_pic.svelte';
 import Table from './assets/table.svelte';
+import Defi from './assets/defi.svelte';
+
 
 
 import Bybit from './assets/bybit_logo.svelte';
@@ -56,22 +58,22 @@ function navigateToBybit() {
 <h2>Bybit x L2G0</h2>
 <h5>Layer 2 research market making Grid bot 0</h5>
 
-<div class="center">
-<p>We are a company specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends with AI in the cryptocurrency market and conducting practical studies through trading on various exchanges. L2 Research aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
-</div>
+<div class="center"><Bot/></div>
 
-
-
-
-<div class="center"> <Bot/>
-<!-- <img src="<Bot/>" alt="robot" /> -->
-</div>
-
-
-<br>
 <div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div>
 
-<br><br><h2>L2 DeFi Research</h2>
+<br><br>
+
+<div class="center"><p>We are a company specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends with AI in the cryptocurrency market and conducting practical studies through trading on various exchanges. L2 Research aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
+</div>
+
+<br>
+
+<div class="center"><Defi/></div>
+
+<br>
+
+<h2>L2 DeFi Research</h2>
 
 <div class="center"><p>We offers real-time analysis of cryptocurrency trends, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources.</p></div> <br><br>
 
@@ -106,6 +108,7 @@ function navigateToBybit() {
   align-items: center;
   justify-content: center;
   max-width: 100%;
+  filter: drop-shadow(0 0 1em #ffffff44);
 }
 button{
   display: flex;
