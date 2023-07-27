@@ -6,6 +6,8 @@ import Twitter from './assets/twitter_logo.svelte';
 import Linkedin from './assets/linkedin_logo.svelte';
 import Telegram from './assets/telegram_logo.svelte';
 import Bot from './assets/robot_pic.svelte';
+import Table from './assets/table.svelte';
+
 
 import Bybit from './assets/bybit_logo.svelte';
 import Back from './assets/background.svelte';
@@ -69,8 +71,14 @@ function navigateToBybit() {
 <br><br>
 <div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div>
 
-<br>
-<br>
+<br><br>
+
+
+
+<Table/>
+
+
+<br><br>
 
 <div>
 <a  class="bor" data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a>
