@@ -75,7 +75,9 @@ function navigateToLinkedin() {
 
 <h2>L2 DeFi Research</h2>
 
-<div class="center"><p>We offers real-time analysis of cryptocurrency trends, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources.</p></div> <br>
+<br>
+
+<div class="center"><p>We offers real-time analysis of cryptocurrency trends, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources.</p></div> <br><br>
 
 <div class="center"><button on:click={()=>{navigateToLinkedin();}}>Follow us on <Linkedin_words/></button></div>
 
