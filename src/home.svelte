@@ -7,9 +7,6 @@ import Linkedin from './assets/linkedin_logo.svelte';
 import Bybit from './assets/bybit_logo.svelte';
 import Back from './assets/background.svelte';
 
-function to_bybit_page() {
-  window.location.href = "https://i.bybit.com/2Babhadz";
-}
 
 const schema = {
 "@context": "https://schema.org",
@@ -55,7 +52,7 @@ const schema = {
 <p>We are a company specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends in the cryptocurrency market and conducting practical studies through trading on various exchanges. L2 Research aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
 
 <br>
-<button on:click={to_bybit_page}}><p>Trade with us on</p> <Bybit/></button>
+<a data-sveltekit-reload href="https://i.bybit.com/2Babhadz"><button><p>Trade with us on</p> <Bybit/></button></a>
 
 <br>
 <br>
@@ -77,6 +74,10 @@ const schema = {
 .flash{
   animation: flashing 4s infinite;
   filter: drop-shadow(1 1 3em #ffffff);
+}
+button{
+  max-width: 300px;
+  min-width: 200px;
 }
 .body {
   opacity: 0.4;
