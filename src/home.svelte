@@ -26,7 +26,8 @@ const schema = {
 };
 
 function navigateToBybit() {
-  window.location.href = 'https://i.bybit.com/2Babhadz';
+  window.location.href = "https://i.bybit.com/1LOab1mc?action=inviteToCopy";
+  // 'https://i.bybit.com/2Babhadz';
 }
 </script>
 
