@@ -63,7 +63,7 @@ function navigateToBybit() {
 <br>
 
 
-<Bot/>
+<div class="center"><Bot/></div>
 
 
 
