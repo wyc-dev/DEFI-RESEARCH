@@ -75,7 +75,7 @@ function navigateToBybit() {
 
 
 
-<div class="center"><Table/></div>
+<!-- <div class="center"><Table/></div> -->
 
 
 <br><br>
