@@ -160,7 +160,18 @@ button{
   display: flex;
   align-items: center; /* Vertically center the content */
   justify-content: center; /* Horizontally center the content */
-  gap: 9px;
+  gap: 0px;
+  font-size: 0.8em;
+  max-width: 290px;
+  min-width: 200px;
+  height: 45px;
+  border: 1px solid #06cca9;
+}
+button{
+  display: flex;
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Horizontally center the content */
+  gap: 0px;
   font-size: 0.8em;
   max-width: 290px;
   min-width: 200px;
