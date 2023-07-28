@@ -76,7 +76,7 @@ function navigateToLinkedin() {
 
 <br>
 
-<div class="center"><p>L2 Research © founded by <a class="bor" data-sveltekit-reload href="https://www.linkedin.com/in/y-c-wong/">YC</a> as a side project in 2020</p></div>
+<div class="center"><p>L2 Research © founded by <a class="bor" data-sveltekit-reload href="https://www.linkedin.com/in/y-c-wong/">YC</a> in 2020</p></div>
 
 <br><br>
 
