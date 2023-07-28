@@ -66,7 +66,7 @@ function navigateToGitbook() {
 <div class="center"><Bot/></div><br>
 
 <div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div><br>
-<div class="center"><button on:click={()=>{navigateToGitbook();}}>Open sourced on <Gitbook/></button></div><br>
+<div class="center"><button on:click={()=>{navigateToGitbook();}}>Open sourced on <black><Gitbook/></black></button></div><br>
 <div class="center"><button on:click={()=>{page = 2;}}>More about L2 Research</button></div>
 
 <br><br>
@@ -155,6 +155,14 @@ h5{
   justify-content: center;
   max-width: 420px;
   filter: drop-shadow(0 0 1em #ffffff33);
+}
+
+black{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 420px;
+  filter: drop-shadow(0 0 0.1em #000000);
 }
 button{
   display: flex;
