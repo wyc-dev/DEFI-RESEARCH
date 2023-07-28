@@ -10,6 +10,7 @@ import Bot from './assets/robot_pic.svelte';
 import Table from './assets/table.svelte';
 import Defi from './assets/defi.svelte';
 import Bybit from './assets/bybit_logo.svelte';
+import Gitbook from './assets/gitbook.svelte';
 import Graph from './assets/graph.svelte';
 import Back from './assets/background.svelte';
 import Team from './assets/teamwork.svelte';
@@ -61,6 +62,7 @@ function navigateToLinkedin() {
 <div class="center"><Bot/></div>
 
 <div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div><br>
+<div class="center"><button on:click={()=>{navigateToBybit();}}>Open sourced on <Gitbook/></button></div><br>
 <div class="center"><button on:click={()=>{page = 2;}}>More about L2 Research</button></div>
 
 <br><br>
