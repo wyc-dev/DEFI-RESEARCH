@@ -63,7 +63,7 @@ function navigateToGitbook() {
 <h2>Bybit x "L2G0"</h2>
 <h5>Layer 2 research market making Grid bot 0</h5>
 
-<div class="center"><Bot/></div>
+<div class="center"><Bot/></div><br>
 
 <div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div><br>
 <div class="center"><button on:click={()=>{navigateToGitbook();}}>Open sourced on <Gitbook/></button></div><br>
@@ -115,12 +115,12 @@ function navigateToGitbook() {
 
 <div class="center"><button on:click={()=>{navigateToLinkedin();}}>Follow us on <Linkedin_words/></button></div>
 
-<br><br><br>
+<br><br><br><br>
 
 <div class="center"><Table/></div>
 
 
-<br><br>
+<br><br><br>
 <div class="center"><button on:click={()=>{page = 1;}}>Back to "L2G0" page</button></div>
 
 <br><br>
@@ -139,6 +139,9 @@ function navigateToGitbook() {
 
 
 <style>
+h5{
+  font-size: 0.68em;
+}
 .bor{
   margin : 4px;
 }
