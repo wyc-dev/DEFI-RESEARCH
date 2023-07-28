@@ -40,6 +40,10 @@ function navigateToBybit() {
 function navigateToLinkedin() {
   window.location.href = "https://www.linkedin.com/company/91319068/";
 }
+
+function navigateToGitbook() {
+  window.location.href = "https://web3msg.gitbook.io/l2g0/";
+}
 </script>
 
 
@@ -62,7 +66,7 @@ function navigateToLinkedin() {
 <div class="center"><Bot/></div>
 
 <div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div><br>
-<div class="center"><button on:click={()=>{navigateToBybit();}}>Open sourced on <Gitbook/></button></div><br>
+<div class="center"><button on:click={()=>{navigateToGitbook();}}>Open sourced on <Gitbook/></button></div><br>
 <div class="center"><button on:click={()=>{page = 2;}}>More about L2 Research</button></div>
 
 <br><br>
