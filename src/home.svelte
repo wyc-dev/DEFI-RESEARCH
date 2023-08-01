@@ -58,20 +58,20 @@ function navigateToGitbook() {
 
 {#if page === 1}
 
-<div class="flash"><Logo/></div>
+<div class="flash" in:fade><Logo/></div>
 
-<h2>Bybit x "L2G0"</h2>
-<h5>Layer 2 research market making Grid bot 0</h5>
+<h2 in:fade>Bybit x "L2G0"</h2>
+<h5 in:fade>Layer 2 research market making Grid bot 0</h5>
 
 <div class="center" in:fade><Bot/></div><br>
 
-<div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div><br>
-<div class="center"><button on:click={()=>{navigateToGitbook();}}>Open sourced on <black><Gitbook/></black></button></div><br>
-<div class="center"><button on:click={()=>{page = 2;}}>More about L2 Research</button></div>
+<div class="center" in:fade><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div><br>
+<div class="center" in:fade><button on:click={()=>{navigateToGitbook();}}>Open sourced on <black><Gitbook/></black></button></div><br>
+<div class="center" in:fade><button on:click={()=>{page = 2;}}>More about L2 Research</button></div>
 
 <br><br>
 
-<div>
+<div in:fade>
 <a  class="bor" data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a>
 <a  class="bor" data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
 <a  class="bor" data-sveltekit-reload href="https://t.me/l2research"><Telegram/></a>
@@ -80,7 +80,7 @@ function navigateToGitbook() {
 
 <br>
 
-<div class="center"><p>L2 Research © founded by <a class="bor" data-sveltekit-reload href="https://www.linkedin.com/in/y-c-wong/">YC</a> in 2020</p></div>
+<div class="center" in:fade><p>L2 Research © founded by <a class="bor" data-sveltekit-reload href="https://www.linkedin.com/in/y-c-wong/">YC</a> in 2020</p></div>
 
 <br>
 
