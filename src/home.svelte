@@ -105,6 +105,11 @@ function navigateToGitbook() {
 
 <div class="center"><Graph/></div>
 
+
+<h2>Stay Stable & Sustainable</h2>
+
+<br>
+
 <div class="center"><p>With years of meticulous research, extensive backtesting, and rigorous real-world testing, our robot utilizes sophisticated Market Making and Market Neutral Strategies commonly employed by hedge funds. "L2G0" designed to offer remarkable stability, has consistently delivered monthly returns ranging from 2% to 13%. We are confident that our product will revolutionize your trading experience, providing you with unparalleled advantages in the dynamic world of digital assets.</p></div>
 
 <div class="center"><Team/></div>
