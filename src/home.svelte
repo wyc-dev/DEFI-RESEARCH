@@ -21,8 +21,8 @@ const schema = {
 "@context": "https://schema.org",
 "@type": "WebSite",
 "name": "L2 Research",
-"url": "https://l2-research.vercel.app/",
-"description": "Real-time cryptocurrency trend analysis with decentralized and centralized data.",
+"url": "https://l2r.xyz//",
+"description": "L2 Research provides real-time cryptocurrency trend analysis with decentralized and centralized data. Stay updated with the latest market trends and make informed decisions.",
 "publisher": {
 "@type": "Organization",
 "name": "L2 Research",
