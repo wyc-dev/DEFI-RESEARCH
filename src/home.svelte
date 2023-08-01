@@ -63,7 +63,7 @@ function navigateToGitbook() {
 <h2>Bybit x "L2G0"</h2>
 <h5>Layer 2 research market making Grid bot 0</h5>
 
-<div class="center"><Bot/></div><br>
+<div class="center" in:fade><Bot/></div><br>
 
 <div class="center"><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div><br>
 <div class="center"><button on:click={()=>{navigateToGitbook();}}>Open sourced on <black><Gitbook/></black></button></div><br>
@@ -88,37 +88,37 @@ function navigateToGitbook() {
 
 <br>
 
-<h2>L2 DeFi Research</h2>
+<h2 in:fade>L2 DeFi Research</h2>
 
-<div class="center"><p>"L2 Research" specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends with AI in the cryptocurrency market and conducting practical studies through trading on various exchanges. We aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
+<div class="center" in:fade><p>"L2 Research" specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends with AI in the cryptocurrency market and conducting practical studies through trading on various exchanges. We aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
 </div>
 
 <br>
 
-<div class="center"><Defi/></div>
+<div class="center" in:fade><Defi/></div>
 
 <br>
 
 <br>
 
-<div class="center"><p>We offers real-time analysis of cryptocurrency trends, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources.</p></div>
+<div class="center" in:fade><p>We offers real-time analysis of cryptocurrency trends, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources.</p></div>
 
-<div class="center"><Graph/></div>
+<div class="center" in:fade><Graph/></div>
 
 
-<h2>Stay Stable & Sustainable</h2>
+<h2 in:fade>Stay Stable & Sustainable</h2>
 
 <br>
 
-<div class="center"><p>With years of meticulous research, extensive backtesting, and rigorous real-world testing, our robot utilizes sophisticated Market Making and Market Neutral Strategies commonly employed by hedge funds. "L2G0" designed to offer remarkable stability, has consistently delivered monthly returns ranging from 2% to 13%. We are confident that our product will revolutionize your trading experience, providing you with unparalleled advantages in the dynamic world of digital assets.</p></div>
+<div class="center" in:fade><p>With years of meticulous research, extensive backtesting, and rigorous real-world testing, our robot utilizes sophisticated Market Making and Market Neutral Strategies commonly employed by hedge funds. "L2G0" designed to offer remarkable stability, has consistently delivered monthly returns ranging from 2% to 13%. We are confident that our product will revolutionize your trading experience, providing you with unparalleled advantages in the dynamic world of digital assets.</p></div>
 
-<div class="center"><Team/></div>
+<div class="center" in:fade><Team/></div>
 
-<div class="center"><p>With a shared passion for technology, finance, and innovation, our team is a perfect fusion of expertise and talent. Our developers bring years of experience in creating sophisticated trading algorithms, ensuring that our Automated Cryptocurrency Trading Robot remains at the forefront of technological advancements.</p></div>
+<div class="center" in:fade><p>With a shared passion for technology, finance, and innovation, our team is a perfect fusion of expertise and talent. Our developers bring years of experience in creating sophisticated trading algorithms, ensuring that our Automated Cryptocurrency Trading Robot remains at the forefront of technological advancements.</p></div>
 
 <br><br><br>
 
-<div class="center"><button on:click={()=>{navigateToLinkedin();}}>Follow us on <Linkedin_words/></button></div>
+<div class="center" in:fade><button on:click={()=>{navigateToLinkedin();}}>Follow us on <Linkedin_words/></button></div>
 
 <br><br><br><br>
 
@@ -126,7 +126,7 @@ function navigateToGitbook() {
 
 
 <br><br><br>
-<div class="center"><button on:click={()=>{page = 1;}}>Back to "L2G0" page</button></div>
+<div class="center" in:fade><button on:click={()=>{page = 1;}}>Back to "L2G0" page</button></div>
 
 <br><br>
 
