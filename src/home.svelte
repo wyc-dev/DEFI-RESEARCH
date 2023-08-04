@@ -82,7 +82,7 @@ function navigateToGitbook() {
 
 <br>
 
-<div class="center" in:fade><p>L2 Research © founded by <a class="bor" data-sveltekit-reload href="https://www.linkedin.com/in/y-c-wong/">YC</a> in 2020</p></div>
+<div class="center" in:fade><p>L2 Research © founded by <a class="bor" data-sveltekit-reload href="https://www.linkedin.com/in/y-c-wong/">YC</a> in 2023.</p></div>
 
 <br>
 
