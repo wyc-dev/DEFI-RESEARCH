@@ -60,7 +60,7 @@ function navigateToGitbook() {
 
 <div class="flash" in:fade><Logo/></div>
 
-<h2 in:fade>Bybit x "L2G0"</h2>
+<h2 class="fancy" in:fade>Bybit x "L2G0"</h2>
 <h5 in:fade>Layer 2 research market making Grid bot 0</h5>
 
 <div class="center" in:fade><Bot/></div><br>
@@ -99,14 +99,14 @@ function navigateToGitbook() {
 <div class="center" in:fade><Defi/></div>
 
 <br><br>
-<h2 in:fade>CEX & DEX Data Analysis</h2>
+<h2 class="fancy" in:fade>CEX & DEX Data Analysis</h2>
 
 <div class="center" in:fade><p>We offers real-time analysis of cryptocurrency trends from top DEX and CEX, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources around the verse.</p></div>
 
 <div class="center" in:fade><Graph/></div>
 
 
-<h2 in:fade>Stay Stable & Sustainable</h2>
+<h2 class="fancy" in:fade>Stay Stable & Sustainable</h2>
 
 <br>
 
@@ -114,7 +114,7 @@ function navigateToGitbook() {
 
 <div class="center" in:fade><Team/></div>
 
-<h2 in:fade>We're on the same side.</h2>
+<h2 class="fancy" in:fade>We're on the same side.</h2>
 
 <br>
 
