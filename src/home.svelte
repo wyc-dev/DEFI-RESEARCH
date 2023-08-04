@@ -163,7 +163,7 @@ h5{
   align-items: center;
   justify-content: center;
   max-width: 420px;
-  filter: drop-shadow(0 0 1em #ffffff33);
+  /* filter: drop-shadow(0 0 1em #ffffff33); */
 }
 
 black{
