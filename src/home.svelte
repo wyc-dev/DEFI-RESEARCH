@@ -14,6 +14,7 @@ import Gitbook from './assets/gitbook.svelte';
 import Graph from './assets/graph.svelte';
 import Back from './assets/background.svelte';
 import Team from './assets/teamwork.svelte';
+import Quote from './assets/quote.svelte';
 
 
 let page = 1;
@@ -60,14 +61,15 @@ function navigateToGitbook() {
 
 <div class="flash" in:fade><Logo/></div>
 
-<h2 class="fancy" in:fade>Bybit x "L2G0"</h2>
-<h5 in:fade>Layer 2 research market making Grid bot 0</h5>
+<h2 class="fancy" in:fade>L2 Research</h2>
+<!-- <h5 in:fade>Layer 2 research market making Grid bot 0</h5> -->
 
 <div class="center" in:fade><Bot/></div><br>
 
 <div class="center" in:fade><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div><br>
 <div class="center" in:fade><button on:click={()=>{navigateToGitbook();}}>Study on <black><Gitbook/></black></button></div><br>
-<div class="center" in:fade><button on:click={()=>{page = 2;}}>More about L2 Research</button></div>
+<div class="center" in:fade><button on:click={()=>{page = 2;}}>More about L2 Research 🔍</button></div><br>
+<div class="center" in:fade><button on:click={()=>{page = 3;}}>Fresh mined Bitcoin in HK 🍕</button></div>
 
 <br><br>
 
@@ -84,7 +86,7 @@ function navigateToGitbook() {
 
 <br>
 
-{:else}
+{:else if page == 2}
 
 <br>
 
@@ -124,13 +126,9 @@ function navigateToGitbook() {
 
 <div class="center" in:fade><button on:click={()=>{navigateToLinkedin();}}>Follow us on <Linkedin_words/></button></div>
 
-<br><br><br><br>
-
-<div class="center"><Table/></div>
-
-
 <br><br><br>
-<div class="center" in:fade><button on:click={()=>{page = 1;}}>Back to "L2G0" page</button></div>
+
+<div class="center" in:fade><button on:click={()=>{page = 1;}}>Back</button></div>
 
 <br><br>
 
@@ -142,6 +140,20 @@ function navigateToGitbook() {
 </div> <br>
 
 <h4>🖤 WAGMI ♠️</h4> 
+
+{:else}
+
+
+  <!-- <div class="center"><Quote/></div> -->
+
+  <br><br><br>
+
+  <div class="center" in:fade><button on:click={()=>{page = 1;}}>Back</button></div>
+  
+  <br><br><br>
+
+  <!-- <div class="center"><Table/></div> -->
+
 {/if}
 
 </html>
