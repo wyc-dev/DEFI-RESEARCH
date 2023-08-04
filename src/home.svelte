@@ -88,7 +88,8 @@ function navigateToGitbook() {
 
 <br>
 
-<h2 in:fade>L2 DeFi Research</h2>
+<h2 class="fancy"in:fade>A Blockchain Layer 2</h2>
+<h2 class="fancy"in:fade>DeFi Research Firm</h2>
 
 <div class="center" in:fade><p>"L2 Research" specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends with AI in the cryptocurrency market and conducting practical studies through trading on various exchanges. We aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
 </div>
@@ -113,7 +114,11 @@ function navigateToGitbook() {
 
 <div class="center" in:fade><Team/></div>
 
-<div class="center" in:fade><p>With a shared passion for technology, finance, and innovation, our team is a perfect fusion of expertise and talent. Our developers bring years of experience in creating sophisticated trading algorithms, ensuring that our Automated Cryptocurrency Trading Robot remains at the forefront of technological advancements.</p></div>
+<h2 in:fade>We're on the same side.</h2>
+
+<br>
+
+<div class="center" in:fade><p>With a shared dedication to technology, finance, and innovation, our team forms a seamless fusion of expertise and talent. Our accomplished developers possess extensive experience in crafting sophisticated trading algorithms, ensuring that our Automated Cryptocurrency Trading Robot remains at the forefront of technological advancements. Moreover, within Bybit's copy trading system, our experts operate with a significant capital, mirroring your own investment strategies, enabling us to stand shoulder-to-shoulder with you in pursuit of our shared goals. Together, we are committed to staying abreast of the latest technological advancements and maintaining the leading-edge position of our Automated Cryptocurrency Trading Robot.</p></div>
 
 <br><br><br>
 

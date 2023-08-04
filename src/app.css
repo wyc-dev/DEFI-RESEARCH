@@ -16,7 +16,7 @@
 
 p {
   color: rgba(256, 256, 256, 0.41);
-  font-size: 0.68em;
+  font-size: 0.75em;
   will-change: filter;
   transition: filter 300ms;
 }
@@ -199,6 +199,20 @@ button:focus-visible {
   font-size: 14px;
   animation: confirmed 4s infinite; 
 }
+
+.fancy {
+  @supports (background-clip: text) or (-webkit-background-clip: text) {
+    background-image: 
+      url("data:image/svg+xml,%3Csvg width='2250' height='900' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Cpath fill='%2300A080' d='M0 0h2255v899H0z'/%3E%3Ccircle cx='366' cy='207' r='366' fill='%2300FDCF'/%3E%3Ccircle cx='1777.5' cy='318.5' r='477.5' fill='%2300FDCF'/%3E%3Ccircle cx='1215' cy='737' r='366' fill='%23008060'/%3E%3C/g%3E%3C/svg%3E%0A");
+    background-size: 110% auto;
+    background-position: center;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+}
+
+
 
 @keyframes flashing {
   0% {
