@@ -97,11 +97,10 @@ function navigateToGitbook() {
 
 <div class="center" in:fade><Defi/></div>
 
-<br>
+<br><br>
+<h2 in:fade>CEX & DEX Data Analysis</h2>
 
-<br>
-
-<div class="center" in:fade><p>We offers real-time analysis of cryptocurrency trends, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources.</p></div>
+<div class="center" in:fade><p>We offers real-time analysis of cryptocurrency trends from top DEX and CEX, enabling users to make informed decisions based on up-to-date data from both decentralized and centralized sources around the verse.</p></div>
 
 <div class="center" in:fade><Graph/></div>
 
