@@ -77,32 +77,38 @@
   {:else}
 
 {#if !showT1 & !showT2 & !showT3 & !showT4 & !showT5 & !showT6 & !showT7 & !showT8 & !showT9}
-  <div class="container"> <Ani_text text={T} /></div>
+  <div class="container"> <h2 class="fancy" in:fade><Ani_text text={T} /></h2></div>
+  <p>(tap anywhere to skip)</p>
 {:else if showT1 & !showT2 & !showT3 & !showT4 & !showT5 & !showT6 & !showT7 & !showT8 & !showT9}
   <p in:fade>{T}</p>
-  <div class="container"><Ani_text text={T1} /></div>
+  <div class="container"><h2 class="fancy" in:fade><Ani_text text={T1} /></h2></div>
+  <p>(tap anywhere to skip)</p>
 {:else if showT2 & !showT3 & !showT4 & !showT5 & !showT6 & !showT7 & !showT8 & !showT9}
   <p>{T}</p>
   <p in:fade>{T1}</p>
-  <div class="container"><Ani_text text={T2} /></div>
+  <div class="container"><h2 class="fancy" in:fade><Ani_text text={T2} /></h2></div>
+  <p>(tap anywhere to skip)</p>
 {:else if showT3 & !showT4 & !showT5 & !showT6 & !showT7 & !showT8 & !showT9}
   <p>{T}</p>
   <p>{T1}</p>
   <p in:fade>{T2}</p>
-  <div class="container"><Ani_text text={T3} /></div>
+  <div class="container"><h2 class="fancy" in:fade><Ani_text text={T3} /></h2></div>
+  <p>(tap anywhere to skip)</p>
 {:else if showT4 & !showT5 & !showT6 & !showT7 & !showT8 & !showT9}
   <p>{T}</p>
   <p>{T1}</p>
   <p>{T2}</p>
   <p in:fade>{T3}</p>
-  <div class="container"><Ani_text text={T4} /></div>
+  <div class="container"><h2 class="fancy" in:fade><Ani_text text={T4} /></h2></div>
+  <p>(tap anywhere to skip)</p>
 {:else if showT5 & !showT6 & !showT7 & !showT8 & !showT9}
   <p>{T}</p>
   <p>{T1}</p>
   <p>{T2}</p>
   <p>{T3}</p>
   <p in:fade>{T4}</p>
-  <div class="container"><Ani_text text={T5} /></div>
+  <div class="container"><h2 class="fancy" in:fade><Ani_text text={T5} /></h2></div>
+  <p>(tap anywhere to skip)</p>
 {:else if showT6 & !showT7 & !showT8 & !showT9}
   <p>{T}</p>
   <p>{T1}</p>
@@ -110,7 +116,8 @@
   <p>{T3}</p>
   <p>{T4}</p>
   <p in:fade>{T5}</p>
-  <div class="container"><Ani_text text={T6} /></div>
+  <div class="container"><h2 class="fancy" in:fade><Ani_text text={T6} /></h2></div>
+  <p>(tap anywhere to skip)</p>
 {:else if showT7 & !showT8 & !showT9} <!-- Added new condition for T7 -->
   <p>{T}</p>
   <p>{T1}</p>
@@ -119,7 +126,8 @@
   <p>{T4}</p>
   <p>{T5}</p>
   <p in:fade>{T6}</p>
-  <div class="container"><Ani_text text={T7} /></div>
+  <div class="container"><h2 class="fancy" in:fade><Ani_text text={T7} /></h2></div>
+  <p>(tap anywhere to skip)</p>
 {:else if showT8 & !showT9} <!-- Added new condition for T8 -->
   <p>{T}</p>
   <p>{T1}</p>
@@ -129,7 +137,8 @@
   <p>{T5}</p>
   <p>{T6}</p>
   <p in:fade>{T7}</p>
-  <div class="container"><Ani_text text={T8} /></div>
+  <div class="container"><h2 class="fancy" in:fade><Ani_text text={T8} /></h2></div>
+  <p>(tap anywhere to skip)</p>
 {:else if showT9} <!-- Added new condition for T9 -->
   <p>{T}</p>
   <p>{T1}</p>
@@ -140,7 +149,8 @@
   <p>{T6}</p>
   <p>{T7}</p>
   <p in:fade>{T8}</p>
-  <div class="container"><Ani_text text={T9} /></div>
+  <div class="container"><h2 class="fancy" in:fade><Ani_text text={T9} /></h2></div>
+  <p>(tap anywhere to skip)</p>
 {/if}
 
 
