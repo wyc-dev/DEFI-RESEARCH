@@ -14,7 +14,7 @@
     sell_btc = Math.floor(average * 1.025 * Sell_U);
     buy_btc = Math.floor(average * 0.975 * Buy_U);
   }
-
+  updateBTC();
   function updateValues() {
     updateBTC();
   }
