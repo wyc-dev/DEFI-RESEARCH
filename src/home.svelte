@@ -45,6 +45,10 @@ function navigateToLinkedin() {
 function navigateToGitbook() {
   window.location.href = "https://web3msg.gitbook.io/l2g0/";
 }
+
+function navigateToWhatsapp() {
+  window.location.href = "https://wa.me/message/3KSSUHG2PZOHL1";
+}
 </script>
 
 
@@ -149,7 +153,7 @@ function navigateToGitbook() {
 
   <br><br><br>
 
-  <div class="center" in:fade><button on:click={()=>{page = 1;}}>Back</button></div>
+  <div class="center" in:fade><button on:click={()=>{navigateToWhatsapp();}}>Trade</button></div>
 
   <br>
 

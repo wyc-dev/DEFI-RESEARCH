@@ -40,8 +40,8 @@ setInterval(updateBTC, 3000);
     <p>Loading real-time price data...</p>
   {/if}
   <br>
-  
-  <p>(request your desired cryptocurrency)</p>
+
+  <p>(or request your desired cryptocurrency)</p>
 
 </main>
 
