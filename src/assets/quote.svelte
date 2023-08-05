@@ -22,17 +22,17 @@ async function fetchData() {
 }
 
 fetchData(); // Initial fetch
-
 // Set interval to fetch data every 3 seconds (3000 milliseconds)
-setInterval(fetchData, 3000);
+
+setInterval(fetchData, 5000);
 
 </script>
 
 <main>
   <h2 class="fancy" in:fade>L2 Bitcoin Trading</h2>
   {#if aPrice !== null && bPrice !== null}
-    <p class="green">Buying price :</p><h2 class="fancy" in:fade>{aPrice}</h2>
-    <p class="red">Selling price :</p> <h2 class="fancy" in:fade>{bPrice}</h2>
+    <p class="green">Buying price in $HKD:</p><h2 class="fancy" in:fade>{aPrice}</h2>
+    <p class="red">Selling price in $HKD:</p> <h2 class="fancy" in:fade>{bPrice}</h2>
   {:else}
     <p>Loading real-time price data...</p>
   {/if}
@@ -42,10 +42,10 @@ setInterval(fetchData, 3000);
 <style>
 /* Style for red text */
 .red {
-  color: #FF000066;
+  color: #FF000099;
 }
 /* Style for green text */
 .green {
-  color: #00FF0066;
+  color: #00FF0099;
 }
 </style>
