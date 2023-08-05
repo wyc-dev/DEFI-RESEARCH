@@ -6,7 +6,7 @@
 
   const T = 'Greetings, esteemed pioneer.';
   const T1 = 'Welcome to our world of innovation and possibilities.';
-  const T2 = 'We are not ordinary blockchain development team; we are pioneers of a new economy that is shaping the future of decentralized technology.';
+  const T2 = 'We are not ordinary blockchain development team; we are pioneers of a new economy that is shaping the future of decentralized technology with AI.';
   const T3 = "With expertise in cryptocurrency algorithm research, we're not just a team - we're visionaries who believe in the power of innovation.";
   const T4 = "Our passion lies in creating cutting-edge solutions that can revolutionize the cryptocurrency landscape.";
   const T5 = "Whether you're an experienced trader or a curious novice, our advanced trading robot L2G0 will provide you with efficient and stable trading.";
