@@ -72,7 +72,7 @@
 </script>
 
 <html in:fade on:click={() => { showT9 = true; }}>
-  {#if showT10}
+  {#if showT9}
     <Home />
   {:else}
 
