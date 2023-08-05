@@ -15,6 +15,7 @@ import Graph from './assets/graph.svelte';
 import Back from './assets/background.svelte';
 import Team from './assets/teamwork.svelte';
 import Quote from './assets/quote.svelte';
+import Swap from './assets/swap.svelte';
 
 
 let page = 1;
@@ -146,10 +147,11 @@ function navigateToWhatsapp() {
 
 <h4>🖤 WAGMI ♠️</h4> 
 
-{:else}
+{:else if page == 3}
 
+  <div class="flash adjust" in:fade><Swap/></div>
 
-  <div class="center"><Quote/></div>
+  <Quote/>
 
   <br><br><br>
 
