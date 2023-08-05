@@ -150,6 +150,10 @@ function navigateToGitbook() {
   <br><br><br>
 
   <div class="center" in:fade><button on:click={()=>{page = 1;}}>Back</button></div>
+
+  <br>
+
+  <div class="center" in:fade><button on:click={()=>{page = 1;}}>Back</button></div>
   
   <br><br><br>
 
