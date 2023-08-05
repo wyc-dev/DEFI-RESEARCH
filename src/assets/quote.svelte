@@ -1,29 +1,35 @@
 <script>
+  let aPrice;
+  let bPrice;
 
-  import B from './btc.svelte';
-
-  let sell_btc;
-  let buy_btc;
-
-  async function updateBTC() {
-    const response = await fetch('https://api.bybit.com/v5/market/orderbook?category=spot&limit=1&symbol=BTCUSDT');
-    const data = await response.json();
-    const aValue = parseFloat(data.result.a[0][0]);
-    const bValue = parseFloat(data.result.b[0][0]);
-    const average = Math.floor((aValue + bValue) / 2);
-    sell_btc = Math.floor(average * 1.025 * Sell_U);
-    buy_btc = Math.floor(average * 0.975 * Buy_U);
-  }
-  updateBTC();
-  function updateValues() {
-    updateBTC();
+  function round(number, decimalPlaces) {
+    return Number(Math.round(number + 'e' + decimalPlaces) + 'e-' + decimalPlaces);
   }
 
-  setInterval(updateValues, 5000);
+  async function fetchData() {
+    try {
+      const response = await fetch('https://api.bybit.com/v5/market/orderbook?category=spot&limit=1&symbol=BTCUSDT');
+      const data = await response.json();
+      const { a, b } = data.result;
+
+      aPrice = round(a[0][0] * 1.05);
+      bPrice = round(b[0][0] * 0.95);
+
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  }
+
+  fetchData();
 </script>
 
-<div in:fade>
-  <h4 ><B/>BTC-HKD：</h4>
-  <h2 class="fancy" in:fade on:click={()=>{BTC()}}>{buy_btc} / {sell_btc}</h2>
-  <h4 >（ Client Selling / Client Buying ）</h4>
-</div>
+<main>
+  
+  <h2 class="fancy" in:fade>L2 Bitcoin Trading</h2>
+  {#if aPrice && bPrice}
+    <p>{aPrice} {bPrice}</p>
+  {:else}
+    <p>Loading real-time price data...</p>
+  {/if}
+
+</main>
