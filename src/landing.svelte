@@ -34,7 +34,7 @@
 
     setTimeout(() => {
       showT2 = true;
-    }, (T.length + T1.length) * 41);
+    }, (T.length + T1.length) * 68);
 
     setTimeout(() => {
       showT3 = true;
