@@ -31,8 +31,10 @@ setInterval(fetchData, 5000);
 <main>
   <h2 class="fancy" in:fade>L2 Bitcoin Trading</h2>
   {#if aPrice !== null && bPrice !== null}
-    <p class="green">Buying price in $HKD:</p><h2 class="fancy" in:fade>{aPrice}</h2>
-    <p class="red">Selling price in $HKD:</p> <h2 class="fancy" in:fade>{bPrice}</h2>
+    <p class="green">Buying price in $HKD:</p>
+    <h2 class="fancy" in:fade>{aPrice}</h2>
+    <p class="red">Selling price in $HKD:</p>
+    <h2 class="fancy" in:fade>{bPrice}</h2>
   {:else}
     <p>Loading real-time price data...</p>
   {/if}
