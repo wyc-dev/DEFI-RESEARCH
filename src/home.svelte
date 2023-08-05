@@ -88,7 +88,8 @@ function navigateToWhatsapp() {
 
 <br>
 
-<div class="center" in:fade><p>L2 Research © founded by <a class="bor" data-sveltekit-reload href="https://www.linkedin.com/in/y-c-wong/">YC</a> in 2023.</p></div>
+<!-- <div class="center" in:fade><p>L2 Research © founded by <a class="bor" data-sveltekit-reload href="https://www.linkedin.com/in/y-c-wong/">YC</a> in 2023.</p></div> -->
+<div class="center" in:fade><p>L2 Research © established in 2023.</p></div>
 
 <br>
 
@@ -225,5 +226,6 @@ img{
   filter: drop-shadow(0 0 4em #444444);
 }
 html{
+  height:100vh;
 }
 </style>
