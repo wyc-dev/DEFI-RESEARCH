@@ -11,7 +11,7 @@
     if (currentIndex < text.length) {
       typedText += text[currentIndex];
       currentIndex += 1;
-      setTimeout(typeNextLetter, 41); // Adjust the typing speed here (e.g., 100ms for 0.1 second delay)
+      setTimeout(typeNextLetter, 14); // Adjust the typing speed here (e.g., 100ms for 0.1 second delay)
     }
   }
 
