@@ -100,7 +100,7 @@ function navigateToWhatsapp() {
 <h2 class="fancy"in:fade>A Blockchain Layer 2</h2>
 <h2 class="fancy"in:fade>DeFi Research Firm</h2>
 
-<div class="center" in:fade><p>"L2 Research" specializing in researching cryptocurrency market arbitrage strategies, focus on analyzing trends with AI in the cryptocurrency market and conducting practical studies through trading on various exchanges. We aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
+<div class="center" in:fade><p>"L2 Research" specializing in researching cryptocurrency market arbitrage strategies, founded by <a class="bor" data-sveltekit-reload href="https://www.linkedin.com/in/y-c-wong/">YC</a> in 2023. Focus on analyzing trends with AI in the cryptocurrency market and conducting practical studies through trading on various exchanges. We aims to provide effective strategies that supporters and interested individuals can follow to place orders on the Bybit exchange conveniently and securely.</p>
 </div>
 
 <br>
@@ -172,6 +172,9 @@ function navigateToWhatsapp() {
 
 
 <style>
+a{
+  color:grey;
+}
 h5{
   font-size: 0.68em;
 }
