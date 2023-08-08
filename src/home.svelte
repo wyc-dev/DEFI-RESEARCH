@@ -150,8 +150,8 @@ function navigateToWhatsapp() {
 
 {:else if page == 3}
 
-  <!-- <div class="flash adjust" in:fade><Sgirl/></div> -->
-  <div class="swap_girl"><Sgirl/></div>
+  <div class="flash adjust" in:fade><Swap/></div>
+  <!-- <Sgirl/> -->
 
   <Quote/>
 
@@ -179,7 +179,7 @@ function navigateToWhatsapp() {
   align-items: center;
   justify-content: center;
   height:100vh;
-
+  width:100vw;
 }
 a{
   color:grey;
