@@ -66,7 +66,7 @@ function navigateToWhatsapp() {
 
 <div class="flash" in:fade><Logo/></div>
 
-<h2 class="fancy" in:fade>L2 Research</h2><br>
+<h2 class="fancy" in:fade>L2 Research</h2>
 <!-- <h5 in:fade>Layer 2 research market making Grid bot 0</h5> -->
 
 <div class="center" in:fade><Bot/></div><br>
