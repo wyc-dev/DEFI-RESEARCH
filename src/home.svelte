@@ -16,7 +16,7 @@ import Back from './assets/background.svelte';
 import Team from './assets/teamwork.svelte';
 import Quote from './assets/quote.svelte';
 import Swap from './assets/swap.svelte';
-
+import Sgirl from './assets/another_girl.svelte';
 
 let page = 1;
 const schema = {
@@ -150,7 +150,8 @@ function navigateToWhatsapp() {
 
 {:else if page == 3}
 
-  <div class="flash adjust" in:fade><Swap/></div>
+  <!-- <div class="flash adjust" in:fade><Sgirl/></div> -->
+  <div class="swap_girl"><Sgirl/></div>
 
   <Quote/>
 
@@ -172,6 +173,14 @@ function navigateToWhatsapp() {
 
 
 <style>
+.swap_girl{
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+
+}
 a{
   color:grey;
 }
