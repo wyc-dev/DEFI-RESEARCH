@@ -6,7 +6,7 @@ import Twitter from './assets/twitter_logo.svelte';
 import Linkedin from './assets/linkedin_logo.svelte';
 import Linkedin_words from './assets/linkedin.svelte';
 import Telegram from './assets/telegram_logo.svelte';
-import Bot from './assets/robot_pic.svelte';
+import Bot from './assets/l2g0.svelte';
 import Table from './assets/table.svelte';
 import Defi from './assets/defi.svelte';
 import Bybit from './assets/bybit_logo.svelte';
@@ -66,7 +66,7 @@ function navigateToWhatsapp() {
 
 <div class="flash" in:fade><Logo/></div>
 
-<h2 class="fancy" in:fade>L2 Research</h2>
+<h2 class="fancy" in:fade>L2 Research</h2><br>
 <!-- <h5 in:fade>Layer 2 research market making Grid bot 0</h5> -->
 
 <div class="center" in:fade><Bot/></div><br>
