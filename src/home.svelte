@@ -72,11 +72,11 @@ function navigateToWhatsapp() {
 
 <div class="center" in:fade><Bot/></div><br>
 
-<div class="center" in:fade><button on:click={()=>{navigateToBybit();}}>Trade with us on <Bybit/></button></div><br>
-<div class="center" in:fade><button on:click={()=>{navigateToGitbook();}}>Study on <black><Gitbook/></black></button></div><br>
+<div class="center" in:fade><button on:click={()=>{navigateToBybit();}}>L2 Research Hedge Fund</button></div><br>
+<div class="center" in:fade><button on:click={()=>{navigateToGitbook();}}>Open-sourced Code Explaination</button></div><br>
 <!-- <div class="center" in:fade><button on:click={()=>{page = 4;}}>VIP zone 👑</button></div><br> -->
 <!-- <div class="center" in:fade><button on:click={()=>{page = 3;}}>Fresh mined Bitcoin in HK 🍕</button></div><br> -->
-<div class="center" in:fade><button on:click={()=>{page = 2;}}>More about L2 Research 🔍</button></div><br>
+<div class="center" in:fade><button on:click={()=>{page = 2;}}>More about L2 Research</button></div><br>
 
 <br><br>
 
