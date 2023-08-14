@@ -141,14 +141,7 @@ function navigateToWhatsapp() {
 
 <br><br>
 
-<div>
-<a  class="bor" data-sveltekit-reload href="https://twitter.com/l2research"><Twitter/></a>
-<a  class="bor" data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
-<a  class="bor" data-sveltekit-reload href="https://t.me/l2research"><Telegram/></a>
-<br>
-</div> <br>
-
-<h4>🖤 WAGMI ♠️</h4> 
+<h4>🖤 WAGMI ♠️</h4> <br>
 
 {:else if page == 3}
 
