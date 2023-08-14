@@ -77,6 +77,7 @@ function navigateToWhatsapp() {
 <div class="center" in:fade><button on:click={()=>{navigateToGitbook();}}>"L2G0" Code Explaination</button></div><br>
 <!-- <div class="center" in:fade><button on:click={()=>{page = 4;}}>VIP zone 👑</button></div><br> -->
 <!-- <div class="center" in:fade><button on:click={()=>{page = 3;}}>Fresh mined Bitcoin in HK 🍕</button></div><br> -->
+<div class="center" in:fade><button on:click={()=>{navigateToWhatsapp();}}>Private Management Services</button></div><br>
 <div class="center" in:fade><button on:click={()=>{page = 2;}}>More About L2 Research</button></div><br>
 
 <br><br>
