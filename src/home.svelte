@@ -17,6 +17,7 @@ import Team from './assets/teamwork.svelte';
 import Quote from './assets/quote.svelte';
 import Swap from './assets/swap.svelte';
 import Insta from './assets/insta.svelte';
+import WA from './assets/whatsapp.svelte';
 import Sgirl from './assets/another_girl.svelte';
 
 let page = 1;
@@ -85,6 +86,7 @@ function navigateToWhatsapp() {
 <a  class="bor" data-sveltekit-reload href="https://www.linkedin.com/company/91319068/"><Linkedin/></a>
 <a  class="bor" data-sveltekit-reload href="https://t.me/l2research"><Telegram/></a>
 <a  class="bor" data-sveltekit-reload href="https://www.instagram.com/l2g0.ai/"><Insta/></a>
+<a  class="bor" data-sveltekit-reload href="https://wa.me/message/3KSSUHG2PZOHL1"><WA/></a>
 <br>
 </div> 
 
