@@ -73,7 +73,11 @@ function navigateToWhatsapp() {
 
 <div class="center" in:fade><Bot/></div><br>
 
-<div class="center" in:fade><button on:click={()=>{navigateToBybit();}}>L2 Research Hedge Fund</button></div><br>
+<!-- on:click={()=>{navigateToBybit();} -->
+<div class="center" in:fade><button><grey>L2 Research Hedge Fund</grey></button></div><br>
+
+
+
 <div class="center" in:fade><button on:click={()=>{navigateToGitbook();}}>"L2G0" Code Explaination</button></div><br>
 <!-- <div class="center" in:fade><button on:click={()=>{page = 4;}}>VIP zone 👑</button></div><br> -->
 <!-- <div class="center" in:fade><button on:click={()=>{page = 3;}}>Fresh mined Bitcoin in HK 🍕</button></div><br> -->
@@ -201,6 +205,14 @@ h5{
 }
 
 black{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 420px;
+  filter: drop-shadow(0 0 0.1em #000000);
+}
+grey{
+  color: grey;
   display: flex;
   align-items: center;
   justify-content: center;
